@@ -6,10 +6,22 @@
     <description>Recent content in 折腾 on 木木木木木</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 19 Dec 2020 23:48:16 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 27 Dec 2020 23:58:17 +0800</lastBuildDate>
     
 	<atom:link href="https://immmmm.com/posts/coding/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>哔哔 CloudBase</title>
+      <link>https://immmmm.com/bb-tx-cloudbase/</link>
+      <pubDate>Sun, 27 Dec 2020 23:58:17 +0800</pubDate>
+      
+      <guid>https://immmmm.com/bb-tx-cloudbase/</guid>
+      <description>&lt;p&gt;肝了一下午，顺利把 &lt;a href=&#34;https://immmmm.com/bb/&#34;&gt;哔哔&lt;/a&gt; 由 LeanCloud 迁移至腾讯 CloudBase ！页面打开、各端bb，飞起！&lt;/p&gt;
+&lt;p&gt;基本思路：&lt;a href=&#34;https://cloud.tencent.com/document/product/876/41776&#34;&gt;使用 HTTP 访问云函数&lt;/a&gt; 触发 &lt;a href=&#34;https://cloud.tencent.com/document/product/876/46798&#34;&gt;云函数&lt;/a&gt; 插入新哔哔到 &lt;a href=&#34;https://cloud.tencent.com/document/product/876/19362&#34;&gt;数据库&lt;/a&gt;，搞定！&lt;/p&gt;
+&lt;h3 id=&#34;cloudbase-环境部署&#34;&gt;CloudBase 环境部署&lt;/h3&gt;
+&lt;p&gt;参考  &lt;a href=&#34;https://twikoo.js.org/quick-start.html&#34;&gt;https://twikoo.js.org/quick-start.html&lt;/a&gt; 完成环境部署。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>微信小程序评论开发踩坑记</title>
@@ -54,19 +66,6 @@
       <description>&lt;p&gt;感谢 &lt;a href=&#34;https://www.imaegoo.com/&#34;&gt;@iMaeGoo&lt;/a&gt; 大神用爱发电，顺利启用 Twikoo 评论系统，并完美迁移 Valine 评论数据。&lt;/p&gt;
 &lt;p&gt;下午在 &lt;a href=&#34;https://eallion.com/&#34;&gt;@大大的小蜗牛 &lt;/a&gt; 博客看到评论系统右下角竟然不是 Valine 哦，赫然显示这 Twikoo，啥？！&lt;/p&gt;
 &lt;p&gt;原来是基于腾讯云开发的评论系统，换！&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>利用「快捷指令」创建“透明”小组件</title>
-      <link>https://immmmm.com/ios14-transparent-widget-by-shortcuts/</link>
-      <pubDate>Tue, 06 Oct 2020 16:27:30 +0800</pubDate>
-      
-      <guid>https://immmmm.com/ios14-transparent-widget-by-shortcuts/</guid>
-      <description>&lt;p&gt;全“透明”占坑图！&lt;/p&gt;
-&lt;h3 id=&#34;快捷指令用来切图&#34;&gt;快捷指令：用来切图&lt;/h3&gt;
-&lt;p&gt;一个快捷指令搞定：「透明小组件」&lt;a href=&#34;https://www.icloud.com/shortcuts/59062aac9ee241f0b14c9190b9ed09f5&#34;&gt;(这里)&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;其实小组件就3个size，2x2、2x4、4x4，也就是小有6个不同位置、中有3个、大有2个，相对应做了下面3个快捷指令，运行后生成对应位置的背景图片，如小的就把背景图切成6张小图，分别是：上左、上右、中左、中右、下左、下右。&lt;/p&gt;
-&lt;p&gt;特别感谢 &lt;a href=&#34;https://sharecuts.cn/shortcut/8370&#34;&gt;@小悟空哥&lt;/a&gt; 和 &lt;a href=&#34;https://github.com/mzeryck/Transparent-Scriptable-Widget&#34;&gt;@mzeryck&lt;/a&gt; 分享的「快捷指令」和「Scriptable」代码。&lt;/p&gt;</description>
     </item>
     
   </channel>

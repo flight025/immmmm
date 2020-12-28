@@ -7,12 +7,67 @@
             <link href="https://immmmm.com/atom.xml" rel="self" type="application/rss+xml" title="atom" />
             <link href="https://immmmm.com/" rel="alternate" type="text/html" title="HTML" />
             <link href="https://immmmm.com/index.json" rel="alternate" type="application/json" title="JSON" />
-    <updated>2020-12-28T13:05:00+00:00</updated>
+    <updated>2020-12-28T16:12:34+00:00</updated>
     
     
     
     
         <id>https://immmmm.com/atom.xml</id>
+    
+        
+        <entry>
+            <title type="html"><![CDATA[哔哔 Pro]]></title>
+            <link href="https://immmmm.com/bb-pro/" rel="alternate" type="text/html" />
+            
+                <id>https://immmmm.com/bb-pro/</id>
+            
+            
+            <published>2020-12-28T23:39:12+08:00</published>
+            <updated>2020-12-28T23:39:12+08:00</updated>
+            
+            
+            <content type="html"><![CDATA[<h3 id="pro-n01">Pro N0.1</h3>
+<p>前端支持链接、图片显示。发哔哔的时候插入图片链接或网址链接，会自动识别显示。核心代码来自 <a href="https://www.heson10.com/">@黑石</a> :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">urlToLink</span>(<span style="color:#a6e22e">str</span>) {
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">re</span> <span style="color:#f92672">=</span><span style="color:#e6db74">/\bhttps?:\/\/(?!\S+(?:jpe?g|png|bmp|gif|webp|gif))\S+/g</span>;
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">re_forpic</span> <span style="color:#f92672">=</span><span style="color:#e6db74">/\bhttps?:\/\/.*?(\.gif|\.jpeg|\.png|\.jpg|\.bmp|\.webp)/g</span>;
+  <span style="color:#a6e22e">str</span> <span style="color:#f92672">=</span><span style="color:#a6e22e">str</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#a6e22e">re</span>,<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">website</span>) {
+    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&lt;a href=&#39;&#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">website</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;&#39; target=&#39;_blank&#39;&gt; &lt;i class=&#39;iconfont icon-lianjie-copy&#39;&gt;&lt;/i&gt;链接 &lt;/a&gt;&#34;</span>;
+  });
+  <span style="color:#a6e22e">str</span> <span style="color:#f92672">=</span><span style="color:#a6e22e">str</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#a6e22e">re_forpic</span>,<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">imgurl</span>) {
+    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&lt;img src=&#39;&#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">imgurl</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;&#39;  /&gt; &#34;</span>;
+  });
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">str</span>;
+}
+</code></pre></div><p>完整代码参考本主题 <a href="https://github.com/lmm214/immmmm/blob/master/themes/hello-friend/layouts/_default/bb.html">bb.html</a> ，主要加了上面的过滤正则 <code>urlToLink(item.content)</code> 。</p>
+<h3 id="pro-n02">Pro N0.2</h3>
+<p>接入 <a href="https://7bu.top/">去不图床</a> ，注册之后访问：</p>
+<p><code>https://7bu.top/api/token?email=你的邮箱&amp;password=你的密码</code> 记下 <code>token</code> 值。</p>
+<p><a href="https://7bu.top/index/api.html">图片上传API</a> 异常直接，post <code>https://7bu.top/api/upload</code> ，header 带上自己的 <code>token</code>，不带则匿名上传。用表单的请求参数 <code>image</code> 提交 <code>File</code>。</p>
+<p>相关教程：<a href="https://dusays.com/241/">去不图床PicGo上传插件的使用</a>、<a href="https://blog.svend.cc/upic/tutorials/custom/">uPic 图床配置教程 - 自定义</a></p>
+<h3 id="pro-n03">Pro N0.3</h3>
+<p>iOS 快捷指令上传图片后返回链接，到哔哔输入框。</p>
+<p><photos><img loading='lazy' src="https://lmm.elizen.me/images/2020/12/bbpro-1.jpeg" alt="bbpro-1"  /><img loading='lazy' src="https://lmm.elizen.me/images/2020/12/bbpro-2.jpeg" alt="bbpro-2"  /><img loading='lazy' src="https://lmm.elizen.me/images/2020/12/bbpro-3.png" alt="bbpro-3"  /><img loading='lazy' src="https://lmm.elizen.me/images/2020/12/bbpro-4.png" alt="bbpro-4"  /></photos></p>
+<p>甚至用“快捷指令调用其他指令”实现同步发哔哔和Flomo。</p>
+<p><img loading='lazy' src="https://lmm.elizen.me/images/2020/12/bbpro-5.jpeg" alt="bbpro-5"  /></p>
+<p>具体其他平台发布方式，改日改日再琢磨～</p>
+]]></content>
+            
+                 
+                    
+                 
+                    
+                         
+                        
+                            
+                             
+                                <category scheme="https://immmmm.com/tags/%E6%8A%98%E8%85%BE" term="%E6%8A%98%E8%85%BE" label="折腾" />
+                            
+                        
+                    
+                
+            
+        </entry>
     
         
         <entry>
@@ -209,44 +264,6 @@
                             
                              
                                 <category scheme="https://immmmm.com/tags/%E8%AF%8D%E7%A9%B7" term="%E8%AF%8D%E7%A9%B7" label="词穷" />
-                            
-                        
-                    
-                
-            
-        </entry>
-    
-        
-        <entry>
-            <title type="html"><![CDATA[请在 Bi... 声后留言]]></title>
-            <link href="https://immmmm.com/bb-by-taio-app/" rel="alternate" type="text/html" />
-            
-                <id>https://immmmm.com/bb-by-taio-app/</id>
-            
-            
-            <published>2020-11-25T22:39:55+08:00</published>
-            <updated>2020-11-25T22:39:55+08:00</updated>
-            
-            
-            <content type="html"><![CDATA[<p><a href="https://docs.taio.app/#/cn/">Taio</a> TF 许久许久终于正式上线咯，虽然钟大说是免费公测，但功能还是足够诚意的。这不，试了试内置的动作脚本，做了个动作发「哔哔」！</p>
-<p><img loading='lazy' src="https://lmm.elizen.me/images/2020/11/bi.png" alt="bi"  /></p>
-<p>仓库下载并导入（AirDrop）：<a href="https://github.com/lmm214/diybug/raw/main/Bi.taioactions">Bi.taioactions</a></p>
-<p>其实核心代码也就一段 JavaScript ，但做着做着就用了一些内置的一些模板，因为准备分享出来也就优化了流程。</p>
-<p>「Bi.taioactions」 使用指北：若剪切板为空直接进入码字界面，反之则弹窗询问是否直接发布剪切板内容，还是重新输入。</p>
-<figure>
-    <img src="https://lmm.elizen.me/images/2020/11/Taio-1.jpeg-webp" width="50%"/><img src="https://lmm.elizen.me/images/2020/11/Taio-2.jpeg-webp" width="50%" />
-    <figcaption>Taio 使用指北</figcaption>
-  </figure>]]></content>
-            
-                 
-                    
-                 
-                    
-                         
-                        
-                            
-                             
-                                <category scheme="https://immmmm.com/tags/%E6%8A%98%E8%85%BE" term="%E6%8A%98%E8%85%BE" label="折腾" />
                             
                         
                     

@@ -6,10 +6,19 @@
     <description>Recent content in 折腾 on 木木木木木</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 27 Dec 2020 23:58:17 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 28 Dec 2020 23:39:12 +0800</lastBuildDate>
     
 	<atom:link href="https://immmmm.com/posts/coding/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>哔哔 Pro</title>
+      <link>https://immmmm.com/bb-pro/</link>
+      <pubDate>Mon, 28 Dec 2020 23:39:12 +0800</pubDate>
+      
+      <guid>https://immmmm.com/bb-pro/</guid>
+      <description>Pro N0.1 前端支持链接、图片显示。发哔哔的时候插入图片链接或网址链接，会自动识别显示。核心代码来自 @黑石 : function urlToLink(str) { var re =/\bhttps?:\/\/(?!\S+(?:jpe?g|png|bmp|gif|webp|gif))\S+/g; var re_forpic =/\bhttps?:\/\/.*?(\.gif|\.jpeg|\.png|\.jpg|\.bmp|\.webp)/g; str =str.replace(re,function (website) { return &amp;#34;&amp;lt;a href=&amp;#39;&amp;#34; + website + &amp;#34;&amp;#39; target=&amp;#39;_blank&amp;#39;&amp;gt; &amp;lt;i class=&amp;#39;iconfont icon-lianjie-copy&amp;#39;&amp;gt;&amp;lt;/i&amp;gt;链接 &amp;lt;/a&amp;gt;&amp;#34;; }); str =str.replace(re_forpic,function (imgurl) { return &amp;#34;&amp;lt;img src=&amp;#39;&amp;#34; + imgurl + &amp;#34;&amp;#39; /&amp;gt; &amp;#34;; }); return str; } 完整代码参考本主题 bb.html</description>
+    </item>
     
     <item>
       <title>哔哔 CloudBase</title>
@@ -55,17 +64,6 @@
       <description>&lt;p&gt;&lt;a href=&#34;https://docs.taio.app/#/cn/&#34;&gt;Taio&lt;/a&gt; TF 许久许久终于正式上线咯，虽然钟大说是免费公测，但功能还是足够诚意的。这不，试了试内置的动作脚本，做了个动作发「哔哔」！&lt;/p&gt;
 &lt;p&gt;&lt;img loading=&#39;lazy&#39; src=&#34;https://lmm.elizen.me/images/2020/11/bi.png&#34; alt=&#34;bi&#34;  /&gt;&lt;/p&gt;
 &lt;p&gt;仓库下载并导入（AirDrop）：&lt;a href=&#34;https://github.com/lmm214/diybug/raw/main/Bi.taioactions&#34;&gt;Bi.taioactions&lt;/a&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>启用 Twikoo 评论系统</title>
-      <link>https://immmmm.com/hello-twikoo-comment/</link>
-      <pubDate>Sat, 21 Nov 2020 21:36:33 +0800</pubDate>
-      
-      <guid>https://immmmm.com/hello-twikoo-comment/</guid>
-      <description>&lt;p&gt;感谢 &lt;a href=&#34;https://www.imaegoo.com/&#34;&gt;@iMaeGoo&lt;/a&gt; 大神用爱发电，顺利启用 Twikoo 评论系统，并完美迁移 Valine 评论数据。&lt;/p&gt;
-&lt;p&gt;下午在 &lt;a href=&#34;https://eallion.com/&#34;&gt;@大大的小蜗牛 &lt;/a&gt; 博客看到评论系统右下角竟然不是 Valine 哦，赫然显示这 Twikoo，啥？！&lt;/p&gt;
-&lt;p&gt;原来是基于腾讯云开发的评论系统，换！&lt;/p&gt;</description>
     </item>
     
   </channel>

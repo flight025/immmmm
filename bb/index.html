@@ -187,14 +187,10 @@
     function urlToLink(str) {
       var re =/\bhttps?:\/\/(?!\S+(?:jpe?g|png|bmp|gif|webp|gif))\S+/g;
       var re_forpic =/\bhttps?:\/\/.*?(\.gif|\.jpeg|\.png|\.jpg|\.bmp|\.webp)/g;
-      var re_forpic_vx =/^http:\/\/mmbiz\.qpic\.cn[^\s]*/g;
       str =str.replace(re,function (website) {
         return "<a href='" + website + "' target='_blank'> <i class='iconfont icon-lianjie-copy'></i>链接 </a>";
       });
       str =str.replace(re_forpic,function (imgurl) {
-        return "<img src='" + imgurl + "'  /> ";
-      });
-      str =str.replace(re_forpic_vx,function (imgurl) {
         return "<img src='" + imgurl + "'  /> ";
       });
       return str;
@@ -560,11 +556,13 @@
 
     
 
+    
+
 
 <footer class="footer">
   <div class="footer__inner">
     <div class="copyright">
-      <span>共 171 篇文章</span><span> 80439 字</span>
+      <span>共 172 篇文章</span><span> 80835 字</span>
     </div>
     
       <div class="copyright">

@@ -155,7 +155,7 @@
       env: 'twikoo-2g36bkuz88660f27' 
     })
     app.auth({
-        persistence: "session"
+        persistence: "none" 
     }).anonymousAuthProvider().signIn().then(() => {
         const db = app.database()
         const collection = db.collection('talks')

@@ -6,10 +6,19 @@
     <description>Recent content in 折腾 on 木木木木木</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 28 Dec 2020 23:39:12 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 31 Dec 2020 16:22:57 +0800</lastBuildDate>
     
 	<atom:link href="https://immmmm.com/tags/%E6%8A%98%E8%85%BE/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>浮哔人生</title>
+      <link>https://immmmm.com/flomo-bb-alfred/</link>
+      <pubDate>Thu, 31 Dec 2020 16:22:57 +0800</pubDate>
+      
+      <guid>https://immmmm.com/flomo-bb-alfred/</guid>
+      <description>↗↗↗ 浮哔人生.alfredworkflow ↖↖↖ 双发无压力～</description>
+    </item>
     
     <item>
       <title>哔哔 Pro</title>
@@ -53,17 +62,6 @@
       <guid>https://immmmm.com/flomoapp/</guid>
       <description>&lt;p&gt;上专属邀请链接：&lt;a href=&#34;https://flomoapp.com/register2/?Njk1NA&#34;&gt;https://flomoapp.com/register2/?Njk1NA&lt;/a&gt; (能互相得到几天Pro会员)&lt;/p&gt;
 &lt;p&gt;用了一周 &lt;strong&gt;Flomo&lt;/strong&gt; ，简单来说是一个「哔言哔语」的 &lt;strong&gt;正经版&lt;/strong&gt; ，其特有的回顾功能有点新意，基于某个 TAG 或 批注某条信息，无压力积累碎片化的想法，说不准碎着碎着就成了深度思考！&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>请在 Bi... 声后留言</title>
-      <link>https://immmmm.com/bb-by-taio-app/</link>
-      <pubDate>Wed, 25 Nov 2020 22:39:55 +0800</pubDate>
-      
-      <guid>https://immmmm.com/bb-by-taio-app/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://docs.taio.app/#/cn/&#34;&gt;Taio&lt;/a&gt; TF 许久许久终于正式上线咯，虽然钟大说是免费公测，但功能还是足够诚意的。这不，试了试内置的动作脚本，做了个动作发「哔哔」！&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#39;lazy&#39; src=&#34;https://lmm.elizen.me/images/2020/11/bi.png&#34; alt=&#34;bi&#34;  /&gt;&lt;/p&gt;
-&lt;p&gt;仓库下载并导入（AirDrop）：&lt;a href=&#34;https://github.com/lmm214/diybug/raw/main/Bi.taioactions&#34;&gt;Bi.taioactions&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

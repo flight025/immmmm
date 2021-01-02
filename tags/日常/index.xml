@@ -6,10 +6,24 @@
     <description>Recent content in 日常 on 木木木木木</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 24 Jul 2020 16:18:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 02 Jan 2021 14:22:57 +0800</lastBuildDate>
     
 	<atom:link href="https://immmmm.com/tags/%E6%97%A5%E5%B8%B8/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>二〇二一，你好</title>
+      <link>https://immmmm.com/hi-2021/</link>
+      <pubDate>Sat, 02 Jan 2021 14:22:57 +0800</pubDate>
+      
+      <guid>https://immmmm.com/hi-2021/</guid>
+      <description>&lt;p&gt;回望，过去这一年，在如此不确定下仍能过着几乎正常的生活，万分庆幸！&lt;/p&gt;
+&lt;h3 id=&#34;gridea&#34;&gt;Gridea&lt;/h3&gt;
+&lt;p&gt;弃用某静态托管平台，启用 &lt;a href=&#34;https://gridea.dev/&#34;&gt;Gridea&lt;/a&gt; 分离出 &lt;a href=&#34;https://i.immmmm.com/&#34;&gt;「林小沐」&lt;/a&gt; “晒娃”子博客。&lt;/p&gt;
+&lt;p&gt;转制了几款主题： &lt;a href=&#34;https://immmmm.com/gridea-theme-puti/&#34;&gt;Gridea Theme Puti&lt;/a&gt;、&lt;a href=&#34;https://immmmm.com/gridea-theme-motify/&#34;&gt;Gridea Theme Motify&lt;/a&gt;、&lt;a href=&#34;https://immmmm.com/gridea-theme-webstack/&#34;&gt;Gridea Theme WebStack&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;hugo&#34;&gt;Hugo&lt;/h3&gt;
+&lt;p&gt;感谢 &lt;a href=&#34;https://dearroy.com/&#34;&gt;@罗伊&lt;/a&gt; 收留这小站，借助 VS Code + Github + VPS 开启静态博客新体验！前两项实现多设备同步数据，后一项实现域名管理、站点提速。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Surface Pro 7 上手记</title>
@@ -48,16 +62,6 @@
       
       <guid>https://immmmm.com/nintendo-switch-tx/</guid>
       <description>&lt;p&gt;山姆超市败入国行 Nintendo Switch 套装，包含主机（¥1848）+方向盘（¥99）+卡丁车（¥299）+超级马里欧（¥299）=套装（ &lt;del&gt;¥2545&lt;/del&gt;  &amp;ndash;&amp;gt; ¥2288 ），比某东还便宜。其实默认套装只有1款卡丁车，自己手气不错，抽到老包装的有2盘游戏卡带。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>你信什么</title>
-      <link>https://immmmm.com/dont-forget-smile/</link>
-      <pubDate>Wed, 15 Apr 2020 23:44:54 +0800</pubDate>
-      
-      <guid>https://immmmm.com/dont-forget-smile/</guid>
-      <description>&lt;p&gt;Don‘t &lt;del&gt;Forget To&lt;/del&gt; Smile.&lt;/p&gt;
-&lt;p&gt;刷完《余欢水》，想起《小丑》这幕，呵呵，听歌听歌。&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -7,12 +7,126 @@
             <link href="https://immmmm.com/atom.xml" rel="self" type="application/rss+xml" title="atom" />
             <link href="https://immmmm.com/" rel="alternate" type="text/html" title="HTML" />
             <link href="https://immmmm.com/index.json" rel="alternate" type="application/json" title="JSON" />
-    <updated>2021-01-01T10:46:33+00:00</updated>
+    <updated>2021-01-02T07:24:44+00:00</updated>
     
     
     
     
         <id>https://immmmm.com/atom.xml</id>
+    
+        
+        <entry>
+            <title type="html"><![CDATA[二〇二一，你好]]></title>
+            <link href="https://immmmm.com/hi-2021/" rel="alternate" type="text/html" />
+            
+                <id>https://immmmm.com/hi-2021/</id>
+            
+            
+            <published>2021-01-02T14:22:57+08:00</published>
+            <updated>2021-01-02T14:22:57+08:00</updated>
+            
+            
+            <content type="html"><![CDATA[<p>回望，过去这一年，在如此不确定下仍能过着几乎正常的生活，万分庆幸！</p>
+<h3 id="gridea">Gridea</h3>
+<p>弃用某静态托管平台，启用 <a href="https://gridea.dev/">Gridea</a> 分离出 <a href="https://i.immmmm.com/">「林小沐」</a> “晒娃”子博客。</p>
+<p>转制了几款主题： <a href="https://immmmm.com/gridea-theme-puti/">Gridea Theme Puti</a>、<a href="https://immmmm.com/gridea-theme-motify/">Gridea Theme Motify</a>、<a href="https://immmmm.com/gridea-theme-webstack/">Gridea Theme WebStack</a></p>
+<h3 id="hugo">Hugo</h3>
+<p>感谢 <a href="https://dearroy.com/">@罗伊</a> 收留这小站，借助 VS Code + Github + VPS 开启静态博客新体验！前两项实现多设备同步数据，后一项实现域名管理、站点提速。</p>
+<p>也相应折腾了些，如： <a href="https://github.com/lmm214/immmmm/tree/master/themes/hello-friend">「hello-friend」自用版</a>、<a href="https://immmmm.com/hugo-theme-webstack/">Hugo Theme Webstack</a></p>
+<h3 id="评论和哔哔">评论和哔哔</h3>
+<p>停用 Leancloud，转入腾讯云 Cloudbase。</p>
+
+
+
+
+	
+		
+	
+
+
+<div class="post-preview">
+  <div class="post-preview--meta" style="width:100%;">
+    <div class="post-preview--middle">
+      <h4 class="post-preview--title">
+        <a target="_blank" href="https://immmmm.com/hello-twikoo-comment/">启用 Twikoo 评论系统</a>
+      </h4>
+      <time class="post-preview--date">2020-11-21</time>
+      
+      <small>#折腾&nbsp;</small>
+      
+      <section style="max-height:96px;overflow:hidden;" class="post-preview--excerpt">
+        感谢 @iMaeGoo 大神用爱发电，顺利启用 Twikoo 评论系统，并完美迁移 Valine 评论数据。
+下午在 @大大的小蜗牛  博客看到评论系统右下角竟然不是 Valine 哦，赫然显示这 Twikoo，啥？！
+原来是基于腾讯云开发的评论系统，换！
+
+      </section>
+    </div>
+  </div>
+  
+</div>
+
+
+
+
+
+	
+		
+			
+			
+		
+	
+
+
+<div class="post-preview">
+  <div class="post-preview--meta" style="width:100%;">
+    <div class="post-preview--middle">
+      <h4 class="post-preview--title">
+        <a target="_blank" href="https://immmmm.com/bb-tx-cloudbase/">哔哔 CloudBase</a>
+      </h4>
+      <time class="post-preview--date">2020-12-27</time>
+      
+      <small>#折腾&nbsp;</small>
+      
+      <section style="max-height:96px;overflow:hidden;" class="post-preview--excerpt">
+        肝了一下午，顺利把 哔哔 由 LeanCloud 迁移至腾讯 CloudBase ！页面打开、各端bb，飞起！
+基本思路：使用 HTTP 访问云函数 触发 云函数 插入新哔哔到 数据库，搞定！
+CloudBase 环境部署 参考 https://twikoo.js.org/quick-start.html 完成环境部署。
+
+      </section>
+    </div>
+  </div>
+  
+    <img rel="link" loading="lazy" class="post-preview--image avatar" src="https://lmm.elizen.me/images/2020/12/bb-tx-1.png">
+  
+</div>
+
+<h3 id="微信小程序">微信小程序</h3>
+<p>前后边学边做将近三年，用 <a href="https://cloud.minapp.com/">知晓云</a> 作为后端和 <a href="https://github.com/weilanwl/ColorUI">ColorUI</a> 样式库，基本上已发开出自己想开发的功能，从最初每年几百的后端费用，现在累计广告收入也有 3K，大部分收入是特殊时期，最高一天达到800。当然，平常也就几毛。现在有个开屏广告，每天又能多个几毛，月底攒杯星爸爸！</p>
+<h3 id="玩物废志">玩物废志</h3>
+<p>年中成为 Nintendo Switch 国行勇士一员，旷野肝了200h+，荒野肝了6K多场。</p>
+<p><img loading='lazy' src="https://lmm.elizen.me/images/2021/01/brawl.PNG" alt="brawl"  /></p>
+<h3 id="十年之约">十年之约</h3>
+<figure>
+    <img src="https://lmm.elizen.me/images/2021/01/foreverblog-1.png"/><figcaption>博客十年之约</figcaption></figure>
+
+<h3 id="结语">结语</h3>
+<p>过去的就让他过去吧，抬头是星辰大海，低头是爱与被爱。</p>]]></content>
+            
+                 
+                    
+                 
+                    
+                         
+                        
+                            
+                             
+                                <category scheme="https://immmmm.com/tags/%E6%97%A5%E5%B8%B8" term="%E6%97%A5%E5%B8%B8" label="日常" />
+                            
+                        
+                    
+                
+            
+        </entry>
     
         
         <entry>
@@ -223,39 +337,6 @@
 <p>最省心的功能，判断是否创建者或管理者，显示「删除」按钮。这方面知晓云服务到位！</p>
 <h3 id="订阅消息">订阅消息</h3>
 <p>url 中文转码导致 page 无法正常跳转，keyword 特定参数及限制导致测试了一下午，加上 <code>decodeuricomponent()</code> 顺利回血！</p>]]></content>
-            
-                 
-                    
-                 
-                    
-                         
-                        
-                            
-                             
-                                <category scheme="https://immmmm.com/tags/%E6%8A%98%E8%85%BE" term="%E6%8A%98%E8%85%BE" label="折腾" />
-                            
-                        
-                    
-                
-            
-        </entry>
-    
-        
-        <entry>
-            <title type="html"><![CDATA[Flomo | 浮墨笔记]]></title>
-            <link href="https://immmmm.com/flomoapp/" rel="alternate" type="text/html" />
-            
-                <id>https://immmmm.com/flomoapp/</id>
-            
-            
-            <published>2020-12-13T17:17:37+08:00</published>
-            <updated>2020-12-13T17:17:37+08:00</updated>
-            
-            
-            <content type="html"><![CDATA[<p>上专属邀请链接：<a href="https://flomoapp.com/register2/?Njk1NA">https://flomoapp.com/register2/?Njk1NA</a> (能互相得到几天Pro会员)</p>
-<p>用了一周 <strong>Flomo</strong> ，简单来说是一个「哔言哔语」的 <strong>正经版</strong> ，其特有的回顾功能有点新意，基于某个 TAG 或 批注某条信息，无压力积累碎片化的想法，说不准碎着碎着就成了深度思考！</p>
-<p>刚公布了 <a href="https://support.qq.com/products/297045/faqs-more/#classifyId=46026">API 发布内容</a> ，iOS 快捷方式、Mac 的自动化和Alfred ，让发布内容更直接！</p>
-<p>PS：其续费页面有个教育优惠，非常直接的说明不做验证自由选择，点个赞！</p>]]></content>
             
                  
                     

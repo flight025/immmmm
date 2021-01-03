@@ -7,7 +7,7 @@
             <link href="https://immmmm.com/atom.xml" rel="self" type="application/rss+xml" title="atom" />
             <link href="https://immmmm.com/" rel="alternate" type="text/html" title="HTML" />
             <link href="https://immmmm.com/index.json" rel="alternate" type="application/json" title="JSON" />
-    <updated>2021-01-02T10:54:27+00:00</updated>
+    <updated>2021-01-03T13:08:31+00:00</updated>
     
     
     
@@ -135,39 +135,6 @@ CloudBase 环境部署 参考 https://twikoo.js.org/quick-start.html 完成环�
                             
                              
                                 <category scheme="https://immmmm.com/tags/%E6%97%A5%E5%B8%B8" term="%E6%97%A5%E5%B8%B8" label="日常" />
-                            
-                        
-                    
-                
-            
-        </entry>
-    
-        
-        <entry>
-            <title type="html"><![CDATA[浮哔人生]]></title>
-            <link href="https://immmmm.com/flomo-bb-alfred/" rel="alternate" type="text/html" />
-            
-                <id>https://immmmm.com/flomo-bb-alfred/</id>
-            
-            
-            <published>2020-12-31T16:22:57+08:00</published>
-            <updated>2020-12-31T16:22:57+08:00</updated>
-            
-            
-            <content type="html"><![CDATA[<p><img loading='lazy' src="https://lmm.elizen.me/images/2020/12/fbrs.png" alt="fbrs"  /></p>
-<p>↗↗↗ <a href="https://github.com/lmm214/diybug/raw/main/%E6%B5%AE%E5%93%94%E4%BA%BA%E7%94%9F.alfredworkflow">浮哔人生.alfredworkflow</a> ↖↖↖</p>
-<p>双发无压力～</p>
-]]></content>
-            
-                 
-                    
-                 
-                    
-                         
-                        
-                            
-                             
-                                <category scheme="https://immmmm.com/tags/%E6%8A%98%E8%85%BE" term="%E6%8A%98%E8%85%BE" label="折腾" />
                             
                         
                     
@@ -351,6 +318,39 @@ CloudBase 环境部署 参考 https://twikoo.js.org/quick-start.html 完成环�
 <p>最省心的功能，判断是否创建者或管理者，显示「删除」按钮。这方面知晓云服务到位！</p>
 <h3 id="订阅消息">订阅消息</h3>
 <p>url 中文转码导致 page 无法正常跳转，keyword 特定参数及限制导致测试了一下午，加上 <code>decodeuricomponent()</code> 顺利回血！</p>]]></content>
+            
+                 
+                    
+                 
+                    
+                         
+                        
+                            
+                             
+                                <category scheme="https://immmmm.com/tags/%E6%8A%98%E8%85%BE" term="%E6%8A%98%E8%85%BE" label="折腾" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        
+        <entry>
+            <title type="html"><![CDATA[Flomo | 浮墨笔记]]></title>
+            <link href="https://immmmm.com/flomoapp/" rel="alternate" type="text/html" />
+            
+                <id>https://immmmm.com/flomoapp/</id>
+            
+            
+            <published>2020-12-13T17:17:37+08:00</published>
+            <updated>2020-12-13T17:17:37+08:00</updated>
+            
+            
+            <content type="html"><![CDATA[<p>上专属邀请链接：<a href="https://flomoapp.com/register2/?Njk1NA">https://flomoapp.com/register2/?Njk1NA</a> (能互相得到几天Pro会员)</p>
+<p>用了一周 <strong>Flomo</strong> ，简单来说是一个「哔言哔语」的 <strong>正经版</strong> ，其特有的回顾功能有点新意，基于某个 TAG 或 批注某条信息，无压力积累碎片化的想法，说不准碎着碎着就成了深度思考！</p>
+<p>刚公布了 <a href="https://support.qq.com/products/297045/faqs-more/#classifyId=46026">API 发布内容</a> ，iOS 快捷方式、Mac 的自动化和Alfred ，让发布内容更直接！</p>
+<p>PS：其续费页面有个教育优惠，非常直接的说明不做验证自由选择，点个赞！</p>]]></content>
             
                  
                     

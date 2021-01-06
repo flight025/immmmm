@@ -7,12 +7,132 @@
             <link href="https://immmmm.com/atom.xml" rel="self" type="application/rss+xml" title="atom" />
             <link href="https://immmmm.com/" rel="alternate" type="text/html" title="HTML" />
             <link href="https://immmmm.com/index.json" rel="alternate" type="application/json" title="JSON" />
-    <updated>2021-01-06T12:03:26+00:00</updated>
+    <updated>2021-01-06T13:59:35+00:00</updated>
     
     
     
     
         <id>https://immmmm.com/atom.xml</id>
+    
+        
+        <entry>
+            <title type="html"><![CDATA[「哔哔点啥」微信公众号 2.0]]></title>
+            <link href="https://immmmm.com/bb-by-wechat-pro/" rel="alternate" type="text/html" />
+            
+                <id>https://immmmm.com/bb-by-wechat-pro/</id>
+            
+            
+            <published>2021-01-06T20:22:49+08:00</published>
+            <updated>2021-01-06T20:22:49+08:00</updated>
+            
+            
+            <content type="html"><![CDATA[<figure>
+    <img src="https://lmm.elizen.me/images/2020/05/bbds.png"/><figcaption>「哔哔点啥」微信公众号 2.0</figcaption></figure>
+
+<p>原是发到 LeanCloud 平台，现 2.0 是发到 <strong>「腾讯 CloudBase」</strong> 。目前已支持用户名绑定、解绑、发哔、删哔。</p>
+<blockquote>
+<p>/unbb - 撤销最新一条哔哔
+/nobody - 解除绑定
+/newbber KEY,HTTP访问地址 - 添加绑定</p>
+</blockquote>
+<p>对，绑定只需要2个信息，一个自定义的 <code>KEY</code> 和 <code>云函数的http访问地址</code></p>
+<h3 id="腾讯-cloudbase-部署获取环境id">腾讯 CloudBase 部署，获取环境ID</h3>
+<p>1.<a href="https://curl.qcloud.com/KnnJtUom">注册云开发CloudBase</a>
+2.进入<a href="https://console.cloud.tencent.com/tcb/">云开发控制台</a>，新建环境，请按需配置环境</p>
+<blockquote>
+<p>提示
+环境名称自由填写
+推荐选择计费方式包年包月，套餐版本基础班 1，超出免费额度不会收费
+如果提示选择“应用模板”，请选择“空模板”</p>
+</blockquote>
+<p>3.进入<a href="https://console.cloud.tencent.com/tcb/env/login">环境-登录授权</a>，启用“匿名登录”
+4.进入<a href="https://console.cloud.tencent.com/tcb/env/safety">环境-安全配置</a>，将网站域名添加到“WEB安全域名”
+5.复制 <code>环境Id</code> 备用</p>
+<h3 id="云函数部署">云函数部署</h3>
+<p>接着 <a href="https://console.cloud.tencent.com/tcb/scf/index">新建云函数</a> ，函数名称 <code>bb</code> （可自定义），进入 <code>函数代码</code> 编辑节目，把以下代码丢入 <code>index.js</code>，然后确定。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#e6db74">&#39;use strict&#39;</span>;
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">serverkey</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;xxxx&#39;</span> <span style="color:#75715e">//自定义api key
+</span><span style="color:#75715e">//引入模块
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">tcb</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;@cloudbase/node-sdk&#34;</span>);
+<span style="color:#75715e">//云开发初始化
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">app</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">tcb</span>.<span style="color:#a6e22e">init</span>({
+  <span style="color:#a6e22e">env</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;bb-bbbb&#34;</span> <span style="color:#75715e">//填入自己的环境ID
+</span><span style="color:#75715e"></span>});
+<span style="color:#75715e">//数据库初始化
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">db</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">database</span>()
+<span style="color:#a6e22e">exports</span>.<span style="color:#a6e22e">main</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">async</span> (<span style="color:#a6e22e">event</span>, <span style="color:#a6e22e">context</span>) =&gt; {
+    <span style="color:#75715e">//return event
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">apikey</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">queryStringParameters</span>.<span style="color:#a6e22e">key</span>
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">content</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
+    <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">serverkey</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">apikey</span> ){
+        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">talksCollection</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">collection</span>(<span style="color:#e6db74">&#39;talks&#39;</span>)
+        <span style="color:#75715e">//提取消息内容，发送者，接受者，时间戳，消息类型，内容
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">CreateTime</span> <span style="color:#f92672">=</span> Date.<span style="color:#a6e22e">now</span>(),
+            <span style="color:#a6e22e">Content</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">queryStringParameters</span>.<span style="color:#a6e22e">text</span>,
+            <span style="color:#a6e22e">From</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">queryStringParameters</span>.<span style="color:#a6e22e">from</span>
+        <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">Content</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;/unbb&#39;</span>){ <span style="color:#75715e">//删除最新一条哔哔
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">res</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">talksCollection</span>.<span style="color:#a6e22e">where</span>({}).<span style="color:#a6e22e">orderBy</span>(<span style="color:#e6db74">&#34;date&#34;</span>, <span style="color:#e6db74">&#34;desc&#34;</span>).<span style="color:#a6e22e">limit</span>(<span style="color:#ae81ff">1</span>).<span style="color:#a6e22e">get</span>()
+            <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">deId</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">data</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">_id</span>
+            <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">resDe</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">talksCollection</span>.<span style="color:#a6e22e">doc</span>(<span style="color:#a6e22e">deId</span>).<span style="color:#a6e22e">remove</span>();
+            <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">resDe</span>.<span style="color:#a6e22e">hasOwnProperty</span>(<span style="color:#e6db74">&#39;deleted&#39;</span>)){
+                <span style="color:#a6e22e">content</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;删除成功&#39;</span>
+            }<span style="color:#66d9ef">else</span>{
+                <span style="color:#a6e22e">content</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;删除失败&#39;</span>
+            }
+        }<span style="color:#66d9ef">else</span>{
+            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">talksCollection</span>.<span style="color:#a6e22e">add</span>({<span style="color:#a6e22e">content</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Content</span>, <span style="color:#a6e22e">date</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> Date(<span style="color:#a6e22e">CreateTime</span>), <span style="color:#a6e22e">from</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">From</span>})
+            <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">result</span>.<span style="color:#a6e22e">hasOwnProperty</span>(<span style="color:#e6db74">&#39;id&#39;</span>)){
+                <span style="color:#a6e22e">content</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;发表成功&#39;</span>
+            }<span style="color:#66d9ef">else</span>{
+                <span style="color:#a6e22e">content</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;发表失败&#39;</span>
+            }
+        }
+    }<span style="color:#66d9ef">else</span>{
+        <span style="color:#a6e22e">content</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;key不匹配&#34;</span>
+    }
+    <span style="color:#66d9ef">return</span> {
+        <span style="color:#a6e22e">content</span>
+    };
+}
+</code></pre></div><p>完成后，点击“文件 - 新建文件”，输入 package.json，回车，复制以下代码粘贴，点击 <code>保存并安装依赖</code>。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">{
+    <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;bb&#34;</span>,
+    <span style="color:#e6db74">&#34;version&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;1.0.0&#34;</span>,
+    <span style="color:#e6db74">&#34;main&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;index.js&#34;</span>,
+    <span style="color:#e6db74">&#34;dependencies&#34;</span><span style="color:#f92672">:</span> {<span style="color:#e6db74">&#34;@cloudbase/node-sdk&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;latest&#34;</span>}
+}
+</code></pre></div><h3 id="开启-http-访问服务获取http访问地址">开启 HTTP 访问服务,获取HTTP访问地址</h3>
+<p><img loading='lazy' src="https://lmm.elizen.me/images/2020/12/bb-tx-1.png" alt="bb-tx-1"  /></p>
+<p>环境 &ndash; HTTP访问服务 &ndash; 开启 &ndash; 新建，路径与云函数名匹配。</p>
+<p>现在可以点开看一下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">https://你后台显示的.ap-shanghai.app.tcloudbase.com/bb
+</code></pre></div><p>提示 <code>key不匹配</code>，成功！留存此链接！！！</p>
+<h3 id="扫码绑定">扫码，绑定</h3>
+<figure>
+    <img src="https://lmm.elizen.me/images/2020/05/bbds.png"/><figcaption>「哔哔点啥」微信公众号 2.0</figcaption></figure>
+
+<pre><code>/newbber YourKey,YourHTTP访问地址
+</code></pre><p>飞起～</p>
+<h3 id="说明">说明</h3>
+<p>其实公众号仅用作了转发文字内容，具体功能都是各自地方，好处是，访问以下格式链接也能用。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">https://你后台显示的.ap-shanghai.app.tcloudbase.com/bb?key=云函数里设置的<span style="color:#960050;background-color:#1e0010">&amp;</span>from=自己发挥一个<span style="color:#960050;background-color:#1e0010">&amp;</span>text=哔哔的内容
+</code></pre></div>]]></content>
+            
+                 
+                    
+                 
+                    
+                         
+                        
+                            
+                             
+                                <category scheme="https://immmmm.com/tags/%E6%8A%98%E8%85%BE" term="%E6%8A%98%E8%85%BE" label="折腾" />
+                            
+                        
+                    
+                
+            
+        </entry>
     
         
         <entry>
@@ -223,7 +343,6 @@ CloudBase 环境部署 参考 https://twikoo.js.org/quick-start.html 完成环�
 <h3 id="云函数代码">云函数代码</h3>
 <p>接着 <a href="https://console.cloud.tencent.com/tcb/scf/index">新建云函数</a> ，函数名称 <code>bb</code> （可自定义），进入 <code>函数代码</code> 编辑节目，把以下代码丢入 <code>index.js</code>，然后确定。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#e6db74">&#39;use strict&#39;</span>;
-
 <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">serverkey</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;xxxx&#39;</span> <span style="color:#75715e">//自定义api key
 </span><span style="color:#75715e">//引入模块
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">tcb</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;@cloudbase/node-sdk&#34;</span>);
@@ -231,7 +350,6 @@ CloudBase 环境部署 参考 https://twikoo.js.org/quick-start.html 完成环�
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">app</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">tcb</span>.<span style="color:#a6e22e">init</span>({
   <span style="color:#a6e22e">env</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;bb-bbbb&#34;</span> <span style="color:#75715e">//填入自己的环境ID
 </span><span style="color:#75715e"></span>});
-
 <span style="color:#75715e">//数据库初始化
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">db</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">database</span>()
 
@@ -245,7 +363,7 @@ CloudBase 环境部署 参考 https://twikoo.js.org/quick-start.html 完成环�
 </span><span style="color:#75715e"></span>        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">CreateTime</span> <span style="color:#f92672">=</span> Date.<span style="color:#a6e22e">now</span>(),
             <span style="color:#a6e22e">Content</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">queryStringParameters</span>.<span style="color:#a6e22e">text</span>,
             <span style="color:#a6e22e">From</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">queryStringParameters</span>.<span style="color:#a6e22e">from</span>
-        <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">Content</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;de&#39;</span>){ <span style="color:#75715e">//内容为 de 则删除最新一条bb
+        <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">Content</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;/unbb&#39;</span>){ <span style="color:#75715e">//删除最新一条哔哔
 </span><span style="color:#75715e"></span>            <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">res</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">talksCollection</span>.<span style="color:#a6e22e">where</span>({}).<span style="color:#a6e22e">orderBy</span>(<span style="color:#e6db74">&#34;date&#34;</span>, <span style="color:#e6db74">&#34;desc&#34;</span>).<span style="color:#a6e22e">limit</span>(<span style="color:#ae81ff">1</span>).<span style="color:#a6e22e">get</span>()
             <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">deId</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">data</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">_id</span>
             <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">resDe</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">talksCollection</span>.<span style="color:#a6e22e">doc</span>(<span style="color:#a6e22e">deId</span>).<span style="color:#a6e22e">remove</span>();
@@ -333,39 +451,6 @@ CloudBase 环境部署 参考 https://twikoo.js.org/quick-start.html 完成环�
 <p>最省心的功能，判断是否创建者或管理者，显示「删除」按钮。这方面知晓云服务到位！</p>
 <h3 id="订阅消息">订阅消息</h3>
 <p>url 中文转码导致 page 无法正常跳转，keyword 特定参数及限制导致测试了一下午，加上 <code>decodeuricomponent()</code> 顺利回血！</p>]]></content>
-            
-                 
-                    
-                 
-                    
-                         
-                        
-                            
-                             
-                                <category scheme="https://immmmm.com/tags/%E6%8A%98%E8%85%BE" term="%E6%8A%98%E8%85%BE" label="折腾" />
-                            
-                        
-                    
-                
-            
-        </entry>
-    
-        
-        <entry>
-            <title type="html"><![CDATA[Flomo | 浮墨笔记]]></title>
-            <link href="https://immmmm.com/flomoapp/" rel="alternate" type="text/html" />
-            
-                <id>https://immmmm.com/flomoapp/</id>
-            
-            
-            <published>2020-12-13T17:17:37+08:00</published>
-            <updated>2020-12-13T17:17:37+08:00</updated>
-            
-            
-            <content type="html"><![CDATA[<p>上专属邀请链接：<a href="https://flomoapp.com/register2/?Njk1NA">https://flomoapp.com/register2/?Njk1NA</a> (能互相得到几天Pro会员)</p>
-<p>用了一周 <strong>Flomo</strong> ，简单来说是一个「哔言哔语」的 <strong>正经版</strong> ，其特有的回顾功能有点新意，基于某个 TAG 或 批注某条信息，无压力积累碎片化的想法，说不准碎着碎着就成了深度思考！</p>
-<p>刚公布了 <a href="https://support.qq.com/products/297045/faqs-more/#classifyId=46026">API 发布内容</a> ，iOS 快捷方式、Mac 的自动化和Alfred ，让发布内容更直接！</p>
-<p>PS：其续费页面有个教育优惠，非常直接的说明不做验证自由选择，点个赞！</p>]]></content>
             
                  
                     

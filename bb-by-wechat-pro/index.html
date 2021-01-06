@@ -2,7 +2,7 @@
 <html lang="zh-CN">
   <head>
     
-      <title>哔哔 CloudBase :: 木木木木木</title>
+      <title>「哔哔点啥」微信公众号 2.0 :: 木木木木木</title>
     
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta charset="UTF-8"/>
@@ -11,32 +11,38 @@
 <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
 <script>if ( false || (!!window.MSInputMethodContext && !!document.documentMode)) document.write('\x3Cscript id="_iealwn_js" data-outver="11" src="https://support.dmeng.net/ie-alert-warning/latest.js">\x3C/script>'); </script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="description" content="肝了一下午，顺利把 哔哔 由 LeanCloud 迁移至腾讯 CloudBase ！页面打开、各端bb，飞起！
-基本思路：使用 HTTP 访问云函数 触发 云函数 插入新哔哔到 数据库，搞定！
-CloudBase 环境部署 参考 https://twikoo.js.org/quick-start.html 完成环境部署。
+<meta name="description" content=" 「哔哔点啥」微信公众号 2.0 原是发到 LeanCloud 平台，现 2.0 是发到 「腾讯 CloudBase」 。目前已支持用户名绑定、解绑、发哔、删哔。
+ /unbb - 撤销最新一条哔哔 /nobody - 解除绑定 /newbber KEY,HTTP访问地址 - 添加绑定
+ 对，绑定只需要2个信息，一个自定义的 KEY 和 云函数的http访问地址
 "/>
 <meta name="keywords" content=""/>
 <meta name="referrer" content="never" />
-<link rel="canonical" href="https://immmmm.com/bb-tx-cloudbase/" />
+<link rel="canonical" href="https://immmmm.com/bb-by-wechat-pro/" />
 <link rel="stylesheet" href="https://immmmm.com/style.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:500&display=swap" media="print" onload="this.media='all'">
 <link rel="shortcut icon" href="https://immmmm.com/favicon.ico">
 
-<meta property="og:title" content="哔哔 CloudBase" />
-<meta property="og:description" content="肝了一下午，顺利把 哔哔 由 LeanCloud 迁移至腾讯 CloudBase ！页面打开、各端bb，飞起！
-基本思路：使用 HTTP 访问云函数 触发 云函数 插入新哔哔到 数据库，搞定！
-CloudBase 环境部署
-参考  https://twikoo.js.org/quick-start.html 完成环境部署。" />
+<meta property="og:title" content="「哔哔点啥」微信公众号 2.0" />
+<meta property="og:description" content="
+    「哔哔点啥」微信公众号 2.0
+
+原是发到 LeanCloud 平台，现 2.0 是发到 「腾讯 CloudBase」 。目前已支持用户名绑定、解绑、发哔、删哔。
+
+/unbb - 撤销最新一条哔哔
+/nobody - 解除绑定
+/newbber KEY,HTTP访问地址 - 添加绑定
+
+对，绑定只需要2个信息，一个自定义的 KEY 和 云函数的http访问地址" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://immmmm.com/bb-tx-cloudbase/" />
-<meta property="article:published_time" content="2020-12-27T23:58:17+08:00" />
-<meta property="article:modified_time" content="2020-12-27T23:58:17+08:00" />
+<meta property="og:url" content="https://immmmm.com/bb-by-wechat-pro/" />
+<meta property="article:published_time" content="2021-01-06T20:22:49+08:00" />
+<meta property="article:modified_time" content="2021-01-06T20:22:49+08:00" />
 
 
 
     
-  <link rel="prefetch" href="https://immmmm.com/bb-pro/">
-  <link rel="prefetch" href="https://immmmm.com/bugs-wx-minapp/">
+  
+  <link rel="prefetch" href="https://immmmm.com/hi-2021/">
 
   </head>
   <body class="dark-theme">
@@ -159,17 +165,17 @@ CloudBase 环境部署
 
 
 <li class="active">
-  <a href="https://immmmm.com/bb-tx-cloudbase/">哔哔 CloudBase</a>
+  <a href="https://immmmm.com/bb-by-wechat-pro/">「哔哔点啥」微信公众号 2.0</a>
 </li>
 
 </div>
 
 
   
-    <h2 class="post-title"><a href="https://immmmm.com/bb-tx-cloudbase/">哔哔 CloudBase</a></h2>
+    <h2 class="post-title"><a href="https://immmmm.com/bb-by-wechat-pro/">「哔哔点啥」微信公众号 2.0</a></h2>
     <div class="post-meta">
       
-        <span class="post-date">2020-12-27 23:58:17</span><span> / <span id="twikoo_visitors">0</span> 阅读</span><span> / <span id="twikoo_count">0 条评论</span></span>
+        <span class="post-date">2021-01-06 20:22:49</span><span> / <span id="twikoo_visitors">0</span> 阅读</span><span> / <span id="twikoo_count">0 条评论</span></span>
         
           
         
@@ -179,18 +185,29 @@ CloudBase 环境部署
     
   
     <div class="post-content">
-      <p>肝了一下午，顺利把 <a href="https://immmmm.com/bb/">哔哔</a> 由 LeanCloud 迁移至腾讯 CloudBase ！页面打开、各端bb，飞起！</p>
-<p>基本思路：<a href="https://cloud.tencent.com/document/product/876/41776">使用 HTTP 访问云函数</a> 触发 <a href="https://cloud.tencent.com/document/product/876/46798">云函数</a> 插入新哔哔到 <a href="https://cloud.tencent.com/document/product/876/19362">数据库</a>，搞定！</p>
-<h3 id="cloudbase-环境部署">CloudBase 环境部署</h3>
-<p>参考  <a href="https://twikoo.js.org/quick-start.html">https://twikoo.js.org/quick-start.html</a> 完成环境部署。</p>
-<h3 id="旧数据转化">旧数据转化</h3>
-<p>把 LC 上的评论导出并进行格式转化，形成如下格式，<code>from</code> 字段是我自己后来加的。</p>
-<pre><code>{&quot;_id&quot;:&quot;4ec5c2495fe84db1000046a47026ed51&quot;,&quot;from&quot;:&quot;Alfred&quot;,&quot;content&quot;:&quot;恶果之地得到各“金卡”莫名就通关+1&quot;,&quot;date&quot;:{&quot;$date&quot;:&quot;2020-12-27T07:38:10.844Z&quot;}}
-</code></pre><p>数据库 &ndash; 新建集合，<code>talks</code> （当然可自定）导入json ，权限设为“所有用户可读，仅管理员可写“。</p>
-<h3 id="html-显示代码">html 显示代码</h3>
-<p>参考： <a href="https://github.com/lmm214/immmmm/blob/master/themes/hello-friend/layouts/_default/bb.html">https://github.com/lmm214/immmmm/blob/master/themes/hello-friend/layouts/_default/bb.html</a></p>
-<p>修改其中的 环境id ，匹配自己的主题样式。</p>
-<h3 id="云函数代码">云函数代码</h3>
+      <figure>
+    <img src="https://lmm.elizen.me/images/2020/05/bbds.png"/><figcaption>「哔哔点啥」微信公众号 2.0</figcaption></figure>
+
+<p>原是发到 LeanCloud 平台，现 2.0 是发到 <strong>「腾讯 CloudBase」</strong> 。目前已支持用户名绑定、解绑、发哔、删哔。</p>
+<blockquote>
+<p>/unbb - 撤销最新一条哔哔
+/nobody - 解除绑定
+/newbber KEY,HTTP访问地址 - 添加绑定</p>
+</blockquote>
+<p>对，绑定只需要2个信息，一个自定义的 <code>KEY</code> 和 <code>云函数的http访问地址</code></p>
+<h3 id="腾讯-cloudbase-部署获取环境id">腾讯 CloudBase 部署，获取环境ID</h3>
+<p>1.<a href="https://curl.qcloud.com/KnnJtUom">注册云开发CloudBase</a>
+2.进入<a href="https://console.cloud.tencent.com/tcb/">云开发控制台</a>，新建环境，请按需配置环境</p>
+<blockquote>
+<p>提示
+环境名称自由填写
+推荐选择计费方式包年包月，套餐版本基础班 1，超出免费额度不会收费
+如果提示选择“应用模板”，请选择“空模板”</p>
+</blockquote>
+<p>3.进入<a href="https://console.cloud.tencent.com/tcb/env/login">环境-登录授权</a>，启用“匿名登录”
+4.进入<a href="https://console.cloud.tencent.com/tcb/env/safety">环境-安全配置</a>，将网站域名添加到“WEB安全域名”
+5.复制 <code>环境Id</code> 备用</p>
+<h3 id="云函数部署">云函数部署</h3>
 <p>接着 <a href="https://console.cloud.tencent.com/tcb/scf/index">新建云函数</a> ，函数名称 <code>bb</code> （可自定义），进入 <code>函数代码</code> 编辑节目，把以下代码丢入 <code>index.js</code>，然后确定。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#e6db74">&#39;use strict&#39;</span>;
 <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">serverkey</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;xxxx&#39;</span> <span style="color:#75715e">//自定义api key
@@ -202,7 +219,6 @@ CloudBase 环境部署
 </span><span style="color:#75715e"></span>});
 <span style="color:#75715e">//数据库初始化
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">db</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">database</span>()
-
 <span style="color:#a6e22e">exports</span>.<span style="color:#a6e22e">main</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">async</span> (<span style="color:#a6e22e">event</span>, <span style="color:#a6e22e">context</span>) =&gt; {
     <span style="color:#75715e">//return event
 </span><span style="color:#75715e"></span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">apikey</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">queryStringParameters</span>.<span style="color:#a6e22e">key</span>
@@ -237,26 +253,29 @@ CloudBase 环境部署
         <span style="color:#a6e22e">content</span>
     };
 }
-</code></pre></div><p>完成后，点击“文件 - 新建文件”，输入 package.json，回车，复制以下代码粘贴，点击“保存并安装依赖”。</p>
+</code></pre></div><p>完成后，点击“文件 - 新建文件”，输入 package.json，回车，复制以下代码粘贴，点击 <code>保存并安装依赖</code>。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">{
     <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;bb&#34;</span>,
     <span style="color:#e6db74">&#34;version&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;1.0.0&#34;</span>,
     <span style="color:#e6db74">&#34;main&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;index.js&#34;</span>,
     <span style="color:#e6db74">&#34;dependencies&#34;</span><span style="color:#f92672">:</span> {<span style="color:#e6db74">&#34;@cloudbase/node-sdk&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;latest&#34;</span>}
 }
-</code></pre></div><h3 id="开启-http-访问服务">开启 HTTP 访问服务</h3>
+</code></pre></div><h3 id="开启-http-访问服务获取http访问地址">开启 HTTP 访问服务,获取HTTP访问地址</h3>
 <p><img loading='lazy' src="https://lmm.elizen.me/images/2020/12/bb-tx-1.png" alt="bb-tx-1"  /></p>
 <p>环境 &ndash; HTTP访问服务 &ndash; 开启 &ndash; 新建，路径与云函数名匹配。</p>
 <p>现在可以点开看一下：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">https://你后台显示的.ap-shanghai.app.tcloudbase.com/bb
-</code></pre></div><p>提示 <code>key不匹配</code>，阶段性成功！</p>
-<h3 id="构建-http-请求">构建 http 请求</h3>
+</code></pre></div><p>提示 <code>key不匹配</code>，成功！留存此链接！！！</p>
+<h3 id="扫码绑定">扫码，绑定</h3>
+<figure>
+    <img src="https://lmm.elizen.me/images/2020/05/bbds.png"/><figcaption>「哔哔点啥」微信公众号 2.0</figcaption></figure>
+
+<pre><code>/newbber YourKey,YourHTTP访问地址
+</code></pre><p>飞起～</p>
+<h3 id="说明">说明</h3>
+<p>其实公众号仅用作了转发文字内容，具体功能都是各自地方，好处是，访问以下格式链接也能用。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">https://你后台显示的.ap-shanghai.app.tcloudbase.com/bb?key=云函数里设置的<span style="color:#960050;background-color:#1e0010">&amp;</span>from=自己发挥一个<span style="color:#960050;background-color:#1e0010">&amp;</span>text=哔哔的内容
-</code></pre></div><p>http 加了3个参数， <code>key</code> <code>from</code> <code>text</code> ，浏览器一发，搞定！</p>
-<h3 id="几句后话">几句后话</h3>
-<p>发图行不行，应该行！</p>
-<p>多用户行不行，应该行！</p>
-<p>可，文档太水，再看看再看看！</p>
+</code></pre></div>
       
     </div>
   
@@ -277,23 +296,16 @@ CloudBase 环境部署
         <div class="pagination">
           <div class="pagination__title">
             
-              <a class="pagination__title-h" href="https://github.com/lmm214/immmmm/edit/master/content/posts/coding/bb-tx-cloudbase.md" target="_blank" rel="noopener">阅读更多</a>
+              <a class="pagination__title-h" href="https://github.com/lmm214/immmmm/edit/master/content/posts/coding/bb-by-wechat-pro.md" target="_blank" rel="noopener">阅读更多</a>
             
             <hr />
           </div>
           <div class="pagination__buttons">
             
-              <span class="button previous">
-                <a href="https://immmmm.com/bb-pro/">
-                  <span class="button__icon">←</span>
-                  <span class="button__text">哔哔 Pro</span>
-                </a>
-              </span>
-            
             
               <span class="button next">
-                <a href="https://immmmm.com/bugs-wx-minapp/">
-                  <span class="button__text">微信小程序评论开发踩坑记</span>
+                <a href="https://immmmm.com/hi-2021/">
+                  <span class="button__text">二〇二一，你好</span>
                   <span class="button__icon">→</span>
                 </a>
               </span>

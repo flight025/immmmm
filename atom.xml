@@ -7,7 +7,7 @@
             <link href="https://immmmm.com/atom.xml" rel="self" type="application/rss+xml" title="atom" />
             <link href="https://immmmm.com/" rel="alternate" type="text/html" title="HTML" />
             <link href="https://immmmm.com/index.json" rel="alternate" type="application/json" title="JSON" />
-    <updated>2021-01-06T08:45:14+00:00</updated>
+    <updated>2021-01-06T08:48:12+00:00</updated>
     
     
     
@@ -223,43 +223,58 @@ CloudBase 环境部署 参考 https://twikoo.js.org/quick-start.html 完成环�
 <h3 id="云函数代码">云函数代码</h3>
 <p>接着 <a href="https://console.cloud.tencent.com/tcb/scf/index">新建云函数</a> ，函数名称 <code>bb</code> （可自定义），进入 <code>函数代码</code> 编辑节目，把以下代码丢入 <code>index.js</code>，然后确定。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#e6db74">&#39;use strict&#39;</span>;
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">serverkey</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;immmmm&#39;</span> <span style="color:#75715e">//这里自定义 apikey
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">serverkey</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;xxxx&#39;</span> <span style="color:#75715e">//自定义api key
 </span><span style="color:#75715e">//引入模块
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">tcb</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;tcb-admin-node&#39;</span>)
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">tcb</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;@cloudbase/node-sdk&#34;</span>);
 <span style="color:#75715e">//云开发初始化
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">tcb</span>.<span style="color:#a6e22e">init</span>({
-    <span style="color:#a6e22e">env</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;twikoo-2g36bkuz88660f27&#39;</span> <span style="color:#75715e">// 这里修改为环境id
-</span><span style="color:#75715e"></span>})
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">app</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">tcb</span>.<span style="color:#a6e22e">init</span>({
+  <span style="color:#a6e22e">env</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;bb-bbbb&#34;</span> <span style="color:#75715e">//填入自己的环境ID
+</span><span style="color:#75715e"></span>});
+
 <span style="color:#75715e">//数据库初始化
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">db</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">tcb</span>.<span style="color:#a6e22e">database</span>()
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">db</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">database</span>()
 
 <span style="color:#a6e22e">exports</span>.<span style="color:#a6e22e">main</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">async</span> (<span style="color:#a6e22e">event</span>, <span style="color:#a6e22e">context</span>) =&gt; {
-    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">apikey</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">queryStringParameters</span>.<span style="color:#a6e22e">key</span>
+    <span style="color:#75715e">//return event
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">apikey</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">queryStringParameters</span>.<span style="color:#a6e22e">key</span>
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">content</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
     <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">serverkey</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">apikey</span> ){
         <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">talksCollection</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">collection</span>(<span style="color:#e6db74">&#39;talks&#39;</span>)
         <span style="color:#75715e">//提取消息内容，发送者，接受者，时间戳，消息类型，内容
 </span><span style="color:#75715e"></span>        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">CreateTime</span> <span style="color:#f92672">=</span> Date.<span style="color:#a6e22e">now</span>(),
             <span style="color:#a6e22e">Content</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">queryStringParameters</span>.<span style="color:#a6e22e">text</span>,
             <span style="color:#a6e22e">From</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">queryStringParameters</span>.<span style="color:#a6e22e">from</span>
-        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">talksCollection</span>.<span style="color:#a6e22e">add</span>({<span style="color:#a6e22e">content</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Content</span>, <span style="color:#a6e22e">date</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> Date(<span style="color:#a6e22e">CreateTime</span>), <span style="color:#a6e22e">from</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">From</span>})
-        <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">result</span>.<span style="color:#a6e22e">hasOwnProperty</span>(<span style="color:#e6db74">&#39;id&#39;</span>)){
-            <span style="color:#a6e22e">Content</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;发表成功&#39;</span>
+        <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">Content</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;de&#39;</span>){ <span style="color:#75715e">//内容为 de 则删除最新一条bb
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">res</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">talksCollection</span>.<span style="color:#a6e22e">where</span>({}).<span style="color:#a6e22e">orderBy</span>(<span style="color:#e6db74">&#34;date&#34;</span>, <span style="color:#e6db74">&#34;desc&#34;</span>).<span style="color:#a6e22e">limit</span>(<span style="color:#ae81ff">1</span>).<span style="color:#a6e22e">get</span>()
+            <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">deId</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">data</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">_id</span>
+            <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">resDe</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">talksCollection</span>.<span style="color:#a6e22e">doc</span>(<span style="color:#a6e22e">deId</span>).<span style="color:#a6e22e">remove</span>();
+            <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">resDe</span>.<span style="color:#a6e22e">hasOwnProperty</span>(<span style="color:#e6db74">&#39;deleted&#39;</span>)){
+                <span style="color:#a6e22e">content</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;删除成功&#39;</span>
+            }<span style="color:#66d9ef">else</span>{
+                <span style="color:#a6e22e">content</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;删除失败&#39;</span>
+            }
         }<span style="color:#66d9ef">else</span>{
-            <span style="color:#a6e22e">Content</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;发表失败&#39;</span>
+            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">talksCollection</span>.<span style="color:#a6e22e">add</span>({<span style="color:#a6e22e">content</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">Content</span>, <span style="color:#a6e22e">date</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> Date(<span style="color:#a6e22e">CreateTime</span>), <span style="color:#a6e22e">from</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">From</span>})
+            <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">result</span>.<span style="color:#a6e22e">hasOwnProperty</span>(<span style="color:#e6db74">&#39;id&#39;</span>)){
+                <span style="color:#a6e22e">content</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;发表成功&#39;</span>
+            }<span style="color:#66d9ef">else</span>{
+                <span style="color:#a6e22e">content</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;发表失败&#39;</span>
+            }
         }
     }<span style="color:#66d9ef">else</span>{
-        <span style="color:#a6e22e">Content</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;key不匹配&#34;</span>
+        <span style="color:#a6e22e">content</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;key不匹配&#34;</span>
     }
     <span style="color:#66d9ef">return</span> {
-        <span style="color:#a6e22e">Content</span> <span style="color:#75715e">//event,
-</span><span style="color:#75715e"></span>    };
+        <span style="color:#a6e22e">content</span>
+    };
 }
 </code></pre></div><p>完成后，点击“文件 - 新建文件”，输入 package.json，回车，复制以下代码粘贴，点击“保存并安装依赖”。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">{
     <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;bb&#34;</span>,
     <span style="color:#e6db74">&#34;version&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;1.0.0&#34;</span>,
     <span style="color:#e6db74">&#34;main&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;index.js&#34;</span>,
-    <span style="color:#e6db74">&#34;dependencies&#34;</span><span style="color:#f92672">:</span> {<span style="color:#e6db74">&#34;tcb-admin-node&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;^1.22.2&#34;</span>}
+    <span style="color:#e6db74">&#34;dependencies&#34;</span><span style="color:#f92672">:</span> {<span style="color:#e6db74">&#34;@cloudbase/node-sdk&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;latest&#34;</span>}
 }
 </code></pre></div><h3 id="开启-http-访问服务">开启 HTTP 访问服务</h3>
 <p><img loading='lazy' src="https://lmm.elizen.me/images/2020/12/bb-tx-1.png" alt="bb-tx-1"  /></p>

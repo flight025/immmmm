@@ -7,7 +7,7 @@
             <link href="https://immmmm.com/atom.xml" rel="self" type="application/rss+xml" title="atom" />
             <link href="https://immmmm.com/" rel="alternate" type="text/html" title="HTML" />
             <link href="https://immmmm.com/index.json" rel="alternate" type="application/json" title="JSON" />
-    <updated>2021-01-06T13:59:35+00:00</updated>
+    <updated>2021-01-06T14:11:20+00:00</updated>
     
     
     
@@ -48,6 +48,9 @@
 <p>3.进入<a href="https://console.cloud.tencent.com/tcb/env/login">环境-登录授权</a>，启用“匿名登录”
 4.进入<a href="https://console.cloud.tencent.com/tcb/env/safety">环境-安全配置</a>，将网站域名添加到“WEB安全域名”
 5.复制 <code>环境Id</code> 备用</p>
+<h3 id="新建数据库">新建数据库</h3>
+<p><img loading='lazy' src="https://lmm.elizen.me/images/2020/12/talks.jpg" alt="talks"  /></p>
+<p>新建数据库集合，命名 <code>talks</code>，权限设置为 “所有用户可读，仅管理员可写”。</p>
 <h3 id="云函数部署">云函数部署</h3>
 <p>接着 <a href="https://console.cloud.tencent.com/tcb/scf/index">新建云函数</a> ，函数名称 <code>bb</code> （可自定义），进入 <code>函数代码</code> 编辑节目，把以下代码丢入 <code>index.js</code>，然后确定。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#e6db74">&#39;use strict&#39;</span>;

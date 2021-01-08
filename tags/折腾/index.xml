@@ -20,9 +20,10 @@
       <description>&lt;figure&gt;
     &lt;img src=&#34;https://lmm.elizen.me/images/2020/05/bbds.png&#34;/&gt;&lt;figcaption&gt;「哔哔点啥」微信公众号 2.0&lt;/figcaption&gt;&lt;/figure&gt;
 
-&lt;p&gt;原是发到 LeanCloud 平台，现 2.0 是发到 &lt;strong&gt;「腾讯 CloudBase」&lt;/strong&gt; 。目前已支持用户名绑定、解绑、发哔、删哔。&lt;/p&gt;
+&lt;p&gt;原是发到 LeanCloud 平台，现 2.0 是发到 &lt;strong&gt;「腾讯 CloudBase」&lt;/strong&gt; 。目前已支持用户名绑定、解绑、发文字、&lt;strong&gt;发图片&lt;/strong&gt;、&lt;strong&gt;批量删除&lt;/strong&gt;。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;/unbb - 撤销最新一条哔哔&lt;/li&gt;
+&lt;li&gt;/unbb 数字 - 撤销最新几条哔哔，如 /unbb 2&lt;/li&gt;
 &lt;li&gt;/nobody - 解除绑定&lt;/li&gt;
 &lt;li&gt;/newbber KEY,HTTP访问地址 - 添加绑定&lt;/li&gt;
 &lt;/ul&gt;

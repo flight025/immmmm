@@ -22,11 +22,15 @@
 
 &lt;p&gt;原是发到 LeanCloud 平台，现 2.0 是发到 &lt;strong&gt;「腾讯 CloudBase」&lt;/strong&gt; 。目前已支持用户名绑定、解绑、发文字、&lt;strong&gt;发图片&lt;/strong&gt;、&lt;strong&gt;批量删除&lt;/strong&gt;。&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;/list - 查询最新9条&lt;/li&gt;
-&lt;li&gt;/bb数字 - 删除第几条，如 /bb2&lt;/li&gt;
-&lt;li&gt;/unbb - 撤销最新一条&lt;/li&gt;
-&lt;li&gt;/unbb 数字 - 撤销最新几条，如 /unbb 2&lt;/li&gt;
-&lt;li&gt;/nobody - 解除绑定&lt;/li&gt;
+&lt;li&gt;/l - 显示最近哔哔&lt;/li&gt;
+&lt;li&gt;/a 文字 - 追加文字到第1条&lt;/li&gt;
+&lt;li&gt;/a数字 文字 - 追加文字到第几条，如 /a2 文字&lt;/li&gt;
+&lt;li&gt;/d - 删除第1条&lt;/li&gt;
+&lt;li&gt;/d数字 - 删除第几条，如 /d2&lt;/li&gt;
+&lt;li&gt;/e 文字- 编辑替换第1条&lt;/li&gt;
+&lt;li&gt;/e数字 文字 - 编辑替换第几条，如 /e2 文字&lt;/li&gt;
+&lt;li&gt;/f数字 - 批量删除前几条，如 /f2&lt;/li&gt;
+&lt;li&gt;/nobber - 解除绑定&lt;/li&gt;
 &lt;li&gt;/newbber KEY,HTTP访问地址 - 添加绑定&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;对，绑定只需要2个信息，一个自定义的 &lt;code&gt;KEY&lt;/code&gt; 和 &lt;code&gt;云函数的http访问地址&lt;/code&gt;&lt;/p&gt;</description>

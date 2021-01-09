@@ -7,7 +7,7 @@
             <link href="https://immmmm.com/atom.xml" rel="self" type="application/rss+xml" title="atom" />
             <link href="https://immmmm.com/" rel="alternate" type="text/html" title="HTML" />
             <link href="https://immmmm.com/index.json" rel="alternate" type="application/json" title="JSON" />
-    <updated>2021-01-09T01:03:13+00:00</updated>
+    <updated>2021-01-09T02:32:30+00:00</updated>
     
     
     
@@ -40,7 +40,7 @@
 <li>/e数字 文字 - 编辑替换第几条，如 /e2 文字</li>
 <li>/f数字 - 批量删除前几条，如 /f2</li>
 <li>/nobber - 解除绑定</li>
-<li>/newbber KEY,HTTP访问地址 - 添加绑定</li>
+<li>/bber KEY,HTTP访问地址 - 添加绑定</li>
 </ul>
 <p>对，绑定只需要2个信息，一个自定义的 <code>KEY</code> 和 <code>云函数的http访问地址</code></p>
 <h3 id="日常使用截图">日常使用截图</h3>
@@ -180,7 +180,7 @@
 <figure>
     <img src="https://lmm.elizen.me/images/2020/05/bbds.png"/><figcaption>「哔哔点啥」微信公众号 2.0</figcaption></figure>
 
-<pre><code>/newbber YourKey,YourHTTP访问地址
+<pre><code>/bber YourKey,YourHTTP访问地址
 </code></pre><p>飞起～</p>
 <h3 id="附赠-alfred-workflow">附赠 Alfred Workflow</h3>
 <p>其实公众号仅用作了转发文字内容，具体功能都是各自地方，好处是，访问以下格式链接也能用。</p>

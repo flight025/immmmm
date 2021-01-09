@@ -254,19 +254,13 @@
 <p><img loading='lazy' src="https://lmm.elizen.me/images/2020/12/talks.jpg" alt="talks"  /></p>
 <p>新建数据库集合，命名 <code>talks</code>，权限设置为 “所有用户可读，仅管理员可写”。</p>
 <h3 id="手动部署云函数部署修改代码中的-自定义apikey-和-环境id">手动部署：云函数部署（修改代码中的 「自定义apikey」 和 「环境ID」）</h3>
-<p>接着 <a href="https://console.cloud.tencent.com/tcb/scf/index">新建云函数</a> ，函数名称 <code>bb</code> （可自定义），进入 <code>函数代码</code> 编辑节目，把以下代码丢入 <code>index.js</code>，然后确定。</p>
-<p>完成后，点击“文件 - 新建文件”，输入 package.json，回车，复制以下代码粘贴，点击 <code>保存并安装依赖</code>。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">{
-    <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;bb&#34;</span>,
-    <span style="color:#e6db74">&#34;version&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;1.0.0&#34;</span>,
-    <span style="color:#e6db74">&#34;main&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;index.js&#34;</span>,
-    <span style="color:#e6db74">&#34;dependencies&#34;</span><span style="color:#f92672">:</span> {<span style="color:#e6db74">&#34;@cloudbase/node-sdk&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;latest&#34;</span>}
-}
-</code></pre></div><h3 id="手动部署开启-http-访问服务获取http访问地址">手动部署：开启 HTTP 访问服务,获取HTTP访问地址</h3>
+<p>接着 <a href="https://console.cloud.tencent.com/tcb/scf/index">新建云函数</a> ，函数名称 <code>bber</code> （可自定义），进入 <code>函数代码</code> 编辑，复制 <a href="https://github.com/lmm214/bber/blob/main/src/function/bber/index.js">index.js</a> 代码丢入 <code>index.js</code>，然后确定。</p>
+<p>完成后，点击“文件 - 新建文件”，复制 <a href="https://github.com/lmm214/bber/blob/main/src/function/bber/package.json">package.json</a> 代码丢入 <code>package.json</code>，点击 <code>保存并安装依赖</code>。</p>
+<h3 id="手动部署开启-http-访问服务获取http访问地址">手动部署：开启 HTTP 访问服务,获取HTTP访问地址</h3>
 <p><img loading='lazy' src="https://lmm.elizen.me/images/2020/12/bb-tx-1.png" alt="bb-tx-1"  /></p>
 <p>环境 &ndash; HTTP访问服务 &ndash; 开启 &ndash; 新建，路径与云函数名匹配。</p>
 <p>现在可以点开看一下：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">https://你后台显示的.ap-shanghai.app.tcloudbase.com/bb
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">https://你后台显示的.ap-shanghai.app.tcloudbase.com/bber
 </code></pre></div><p>提示 <code>key不匹配</code>，成功！留存此链接！！！</p>
 <h3 id="扫码绑定">扫码，绑定</h3>
 <figure>
@@ -725,7 +719,7 @@
 <footer class="footer">
   <div class="footer__inner">
     <div class="copyright">
-      <span>共 174 篇文章</span><span> 83226 字</span>
+      <span>共 174 篇文章</span><span> 83208 字</span>
     </div>
     
       <div class="copyright">

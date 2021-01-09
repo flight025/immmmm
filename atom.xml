@@ -7,7 +7,7 @@
             <link href="https://immmmm.com/atom.xml" rel="self" type="application/rss+xml" title="atom" />
             <link href="https://immmmm.com/" rel="alternate" type="text/html" title="HTML" />
             <link href="https://immmmm.com/index.json" rel="alternate" type="application/json" title="JSON" />
-    <updated>2021-01-09T11:28:57+00:00</updated>
+    <updated>2021-01-09T13:40:34+00:00</updated>
     
     
     
@@ -57,7 +57,7 @@
   </figure>
 <h3 id="一键部署及绑定">一键部署及绑定</h3>
 <p>1.点击以下按钮将 BBer 一键部署到云开发</p>
-<p><a href="https://console.cloud.tencent.com/tcb/env/index?action=CreateAndDeployCloudBaseProject&amp;appUrl=https%3A%2F%2Fgithub.com%2Flmm214%2Fbber&amp;branch=main"><img loading='lazy' src="https://main.qcloudimg.com/raw/67f5a389f1ac6f3b4d04c7256438e44f.svg" alt=""  /></a></p>
+<p><a rel="link" href="https://console.cloud.tencent.com/tcb/env/index?action=CreateAndDeployCloudBaseProject&amp;appUrl=https%3A%2F%2Fgithub.com%2Flmm214%2Fbber&amp;branch=main"><img class="avatar" loading="lazy" src="https://main.qcloudimg.com/raw/67f5a389f1ac6f3b4d04c7256438e44f.svg" alt=""></a></p>
 <p>2.进入<a href="https://console.cloud.tencent.com/tcb/env/login">环境-登录授权</a>，启用“匿名登录”</p>
 <p>3.进入<a href="https://console.cloud.tencent.com/tcb/env/safety">环境-安全配置</a>，将博客网址添加到“WEB安全域名”</p>
 <p>4.进入<a href="https://console.cloud.tencent.com/tcb/env/access">环境-HTTP访问服务</a>，复制链接备用。</p>

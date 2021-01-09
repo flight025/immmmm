@@ -6,10 +6,30 @@
     <description>Recent content in 折腾 on 木木木木木</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 06 Jan 2021 20:22:49 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 09 Jan 2021 22:26:22 +0800</lastBuildDate>
     
 	<atom:link href="https://immmmm.com/tags/%E6%8A%98%E8%85%BE/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>腾讯 CloudBase ，开启一键部署</title>
+      <link>https://immmmm.com/tx-cloudbase-framework/</link>
+      <pubDate>Sat, 09 Jan 2021 22:26:22 +0800</pubDate>
+      
+      <guid>https://immmmm.com/tx-cloudbase-framework/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;一键部署按钮可以让公开的 Git 项目一键部署到云开发 CloudBase 上，大大简化用户部署的门槛，方便用户快速使用和体验应用。一键部署功能支持 Github，Gitlab，Coding，Gitee 等 Git 仓库地址。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;利用 &lt;a href=&#34;https://docs.cloudbase.net/framework/plugins/&#34;&gt;CloudBase Framework&lt;/a&gt; 把应用配置写在一个 &lt;code&gt;cloudbaserc.json&lt;/code&gt; 文件中，把这个配置和相关文件上传仓库，然后生成 &lt;a href=&#34;https://docs.cloudbase.net/framework/deploy-button.html#bu-shu-an-niu-shi-ru-he-gong-zuo-de&#34;&gt;一键部署按钮&lt;/a&gt; 。&lt;/p&gt;
+&lt;p&gt;比如 BBer 的 Git仓库目录：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;├── bber
+│   ├── index.js
+│   └── package.json
+└── cloudbaserc.json
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;它的一键部署链接，其实就下面这句：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;https://console.cloud.tencent.com/tcb/env/index?action=CreateAndDeployCloudBaseProject&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;amp;&lt;/span&gt;appUrl=https://github.com/lmm214/bber&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;amp;&lt;/span&gt;branch=main
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
     
     <item>
       <title>「哔哔点啥」微信公众号 2.0</title>
@@ -68,16 +88,6 @@
 &lt;p&gt;刚干完了：评论、相对时间、评论分页、下拉加载、排序切换、点赞、回复、前端删除、订阅消息！除了提交新评论会重新拉取数据，其他前后端分别处理。最舒心的是评论回复的消息通知！&lt;/p&gt;
 &lt;h3 id=&#34;相对时间&#34;&gt;相对时间&lt;/h3&gt;
 &lt;p&gt;时间戳转 Date 及格式化，吐在不支持 &lt;code&gt;new Date()&lt;/code&gt; ，在 wxml 内调用 wxs 搞定！&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Flomo | 浮墨笔记</title>
-      <link>https://immmmm.com/flomoapp/</link>
-      <pubDate>Sun, 13 Dec 2020 17:17:37 +0800</pubDate>
-      
-      <guid>https://immmmm.com/flomoapp/</guid>
-      <description>&lt;p&gt;上专属邀请链接：&lt;a href=&#34;https://flomoapp.com/register2/?Njk1NA&#34;&gt;https://flomoapp.com/register2/?Njk1NA&lt;/a&gt; (能互相得到几天Pro会员)&lt;/p&gt;
-&lt;p&gt;用了一周 &lt;strong&gt;Flomo&lt;/strong&gt; ，简单来说是一个「哔言哔语」的 &lt;strong&gt;正经版&lt;/strong&gt; ，其特有的回顾功能有点新意，基于某个 TAG 或 批注某条信息，无压力积累碎片化的想法，说不准碎着碎着就成了深度思考！&lt;/p&gt;</description>
     </item>
     
   </channel>

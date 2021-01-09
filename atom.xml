@@ -7,7 +7,7 @@
             <link href="https://immmmm.com/atom.xml" rel="self" type="application/rss+xml" title="atom" />
             <link href="https://immmmm.com/" rel="alternate" type="text/html" title="HTML" />
             <link href="https://immmmm.com/index.json" rel="alternate" type="application/json" title="JSON" />
-    <updated>2021-01-09T13:40:34+00:00</updated>
+    <updated>2021-01-09T14:23:29+00:00</updated>
     
     
     
@@ -30,18 +30,18 @@
     <img src="https://lmm.elizen.me/images/2020/05/bbds.png"/><figcaption>「哔哔点啥」微信公众号 2.0</figcaption></figure>
 
 <p>原是发到 LeanCloud 平台，现 2.0 是发到 <strong>「腾讯 CloudBase」</strong> 。目前已支持用户名绑定、解绑、发文字、<strong>发图片</strong>、<strong>批量删除</strong>。</p>
-<ul>
-<li><code>/l</code> - 显示最近哔哔</li>
-<li><code>/a 文字</code> - 追加文字到第1条</li>
-<li><code>/a数字 文字</code> - 追加文字到第几条，如 /a2 文字</li>
-<li><code>/d</code> - 删除第1条</li>
-<li><code>/d数字</code> - 删除第几条，如 /d2</li>
-<li><code>/e 文字</code>- 编辑替换第1条</li>
-<li><code>/e数字 文字</code> - 编辑替换第几条，如 /e2 文字</li>
-<li><code>/f数字</code> - 批量删除前几条，如 /f2</li>
-<li><code>/nobber</code> - 解除绑定</li>
-<li><code>/bber KEY,HTTP访问地址</code> - 添加绑定</li>
-</ul>
+<blockquote>
+<p><code>/l</code> - 显示最近哔哔</p>
+<p><code>/a 文字</code> - 追加文字到第1条</p>
+<p><code>/a数字 文字</code> - 追加文字到第几条，如 /a2 文字</p>
+<p><code>/d</code> - 删除第1条</p>
+<p><code>/d数字</code> - 删除第几条，如 /d2</p>
+<p><code>/e 文字</code>- 编辑替换第1条</p>
+<p><code>/e数字 文字</code> - 编辑替换第几条，如 /e2 文字</p>
+<p><code>/f数字</code> - 批量删除前几条，如 /f2</p>
+<p><code>/nobber</code> - 解除绑定</p>
+<p><code>/bber KEY,HTTP访问地址</code> - 添加绑定</p>
+</blockquote>
 <p>对，绑定只需要2个信息，一个自定义的 <code>KEY</code> 和 <code>云函数的http访问地址</code></p>
 <h3 id="日常使用截图">日常使用截图</h3>
 <blockquote>

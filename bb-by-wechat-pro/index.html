@@ -220,7 +220,7 @@
     <img src="https://lmm.elizen.me/images/2020/12/bber-3.jpg" width="50%"/><img src="https://lmm.elizen.me/images/2020/12/bber-4.jpg" width="50%" />
     <figcaption>「哔哔点啥」操作截图-2</figcaption>
   </figure>
-<h3 id="腾讯-cloudbase-部署获取环境id">腾讯 CloudBase 部署，获取环境ID</h3>
+<h3 id="获取环境id">获取环境ID</h3>
 <p>1.<a href="https://curl.qcloud.com/KnnJtUom">注册云开发CloudBase</a></p>
 <p>2.进入<a href="https://console.cloud.tencent.com/tcb/">云开发控制台</a>，新建环境，请按需配置环境</p>
 <blockquote>
@@ -232,10 +232,10 @@
 <h3 id="新建数据库">新建数据库</h3>
 <p><img loading='lazy' src="https://lmm.elizen.me/images/2020/12/talks.jpg" alt="talks"  /></p>
 <p>新建数据库集合，命名 <code>talks</code>，权限设置为 “所有用户可读，仅管理员可写”。</p>
-<h3 id="云函数部署">云函数部署</h3>
+<h3 id="云函数部署修改代码中的-自定义apikey-和-环境id">云函数部署（修改代码中的 「自定义apikey」 和 「环境ID」）</h3>
 <p>接着 <a href="https://console.cloud.tencent.com/tcb/scf/index">新建云函数</a> ，函数名称 <code>bb</code> （可自定义），进入 <code>函数代码</code> 编辑节目，把以下代码丢入 <code>index.js</code>，然后确定。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#e6db74">&#39;use strict&#39;</span>;
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">serverkey</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;xxxx&#39;</span> <span style="color:#75715e">//自定义api key
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">serverkey</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;xxxx&#39;</span> <span style="color:#75715e">//自定义apikey
 </span><span style="color:#75715e">//引入模块
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">tcb</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;@cloudbase/node-sdk&#34;</span>);
 <span style="color:#75715e">//云开发初始化
@@ -345,7 +345,7 @@
 <figure>
     <img src="https://lmm.elizen.me/images/2020/05/bbds.png"/><figcaption>「哔哔点啥」微信公众号 2.0</figcaption></figure>
 
-<pre><code>/bber YourKey,YourHTTP访问地址
+<pre><code>/bber 云函数里自定义apikey,你的云函数HTTP访问地址
 </code></pre><p>飞起～</p>
 <h3 id="附赠-alfred-workflow">附赠 Alfred Workflow</h3>
 <p>其实公众号仅用作了转发文字内容，具体功能都是各自地方，好处是，访问以下格式链接也能用。</p>
@@ -798,7 +798,7 @@
 <footer class="footer">
   <div class="footer__inner">
     <div class="copyright">
-      <span>共 174 篇文章</span><span> 83403 字</span>
+      <span>共 174 篇文章</span><span> 83432 字</span>
     </div>
     
       <div class="copyright">

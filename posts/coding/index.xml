@@ -40,11 +40,13 @@
       <description>&lt;figure&gt;
     &lt;img src=&#34;https://lmm.elizen.me/images/2020/05/bbds.png&#34;/&gt;&lt;figcaption&gt;「哔哔点啥」微信公众号 2.0&lt;/figcaption&gt;&lt;/figure&gt;
 
-&lt;p&gt;原是发到 LeanCloud 平台，现 2.0 是发到 &lt;strong&gt;「腾讯 CloudBase」&lt;/strong&gt; 。目前已支持用户名绑定、解绑、发文字、&lt;strong&gt;发图片&lt;/strong&gt;、&lt;strong&gt;批量删除&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;原是发到 LeanCloud 平台，现 2.0 是发到 &lt;strong&gt;「腾讯 CloudBase」&lt;/strong&gt; 。目前已支持用户名绑定、解绑、发文字、&lt;strong&gt;发图片&lt;/strong&gt;、追加、合并、删除、替换文字，还有显示&lt;strong&gt;哔哔列表&lt;/strong&gt;、&lt;strong&gt;哔哔搜索&lt;/strong&gt;！&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;code&gt;/l&lt;/code&gt; - 显示最近哔哔&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;/a 文字&lt;/code&gt; - 追加文字到第1条&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;/a数字 文字&lt;/code&gt; - 追加文字到第几条，如 /a2 文字&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;/c&lt;/code&gt; - 合并前2条&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;/c数字&lt;/code&gt; - 合并前几条，如 /c3&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;/d&lt;/code&gt; - 删除第1条&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;/d数字&lt;/code&gt; - 删除第几条，如 /d2&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;/e 文字&lt;/code&gt;- 编辑替换第1条&lt;/p&gt;
@@ -66,18 +68,6 @@
     </item>
     
     <item>
-      <title>哔哔 CloudBase</title>
-      <link>https://immmmm.com/bb-tx-cloudbase/</link>
-      <pubDate>Sun, 27 Dec 2020 23:58:17 +0800</pubDate>
-      
-      <guid>https://immmmm.com/bb-tx-cloudbase/</guid>
-      <description>&lt;p&gt;肝了一下午，顺利把 &lt;a href=&#34;https://immmmm.com/bb/&#34;&gt;哔哔&lt;/a&gt; 由 LeanCloud 迁移至腾讯 CloudBase ！页面打开、各端bb，飞起！&lt;/p&gt;
-&lt;p&gt;基本思路：&lt;a href=&#34;https://cloud.tencent.com/document/product/876/41776&#34;&gt;使用 HTTP 访问云函数&lt;/a&gt; 触发 &lt;a href=&#34;https://cloud.tencent.com/document/product/876/46798&#34;&gt;云函数&lt;/a&gt; 插入新哔哔到 &lt;a href=&#34;https://cloud.tencent.com/document/product/876/19362&#34;&gt;数据库&lt;/a&gt;，搞定！&lt;/p&gt;
-&lt;h3 id=&#34;cloudbase-环境部署&#34;&gt;CloudBase 环境部署&lt;/h3&gt;
-&lt;p&gt;参考  &lt;a href=&#34;https://twikoo.js.org/quick-start.html&#34;&gt;https://twikoo.js.org/quick-start.html&lt;/a&gt; 完成环境部署。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>微信小程序评论开发踩坑记</title>
       <link>https://immmmm.com/bugs-wx-minapp/</link>
       <pubDate>Sat, 19 Dec 2020 23:48:16 +0800</pubDate>
@@ -88,6 +78,16 @@
 &lt;p&gt;刚干完了：评论、相对时间、评论分页、下拉加载、排序切换、点赞、回复、前端删除、订阅消息！除了提交新评论会重新拉取数据，其他前后端分别处理。最舒心的是评论回复的消息通知！&lt;/p&gt;
 &lt;h3 id=&#34;相对时间&#34;&gt;相对时间&lt;/h3&gt;
 &lt;p&gt;时间戳转 Date 及格式化，吐在不支持 &lt;code&gt;new Date()&lt;/code&gt; ，在 wxml 内调用 wxs 搞定！&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Flomo | 浮墨笔记</title>
+      <link>https://immmmm.com/flomoapp/</link>
+      <pubDate>Sun, 13 Dec 2020 17:17:37 +0800</pubDate>
+      
+      <guid>https://immmmm.com/flomoapp/</guid>
+      <description>&lt;p&gt;上专属邀请链接：&lt;a href=&#34;https://flomoapp.com/register2/?Njk1NA&#34;&gt;https://flomoapp.com/register2/?Njk1NA&lt;/a&gt; (能互相得到几天Pro会员)&lt;/p&gt;
+&lt;p&gt;用了一周 &lt;strong&gt;Flomo&lt;/strong&gt; ，简单来说是一个「哔言哔语」的 &lt;strong&gt;正经版&lt;/strong&gt; ，其特有的回顾功能有点新意，基于某个 TAG 或 批注某条信息，无压力积累碎片化的想法，说不准碎着碎着就成了深度思考！&lt;/p&gt;</description>
     </item>
     
   </channel>

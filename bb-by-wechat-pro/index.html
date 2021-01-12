@@ -13,6 +13,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 <meta name="description" content=" 「哔哔点啥」微信公众号 2.0 原是发到 LeanCloud 平台，现 2.0 是发到 「腾讯 CloudBase」 。目前已支持用户名绑定、解绑、发文字、发图片、追加、合并、删除、替换文字，还有显示哔哔列表、哔哔搜索！
  /l - 显示最近哔哔
+/s 关键词 - 搜索相关哔哔
 /a 文字 - 追加文字到第1条
 /a数字 文字 - 追加文字到第几条，如 /a2 文字
 /c - 合并前2条
@@ -40,6 +41,7 @@
 原是发到 LeanCloud 平台，现 2.0 是发到 「腾讯 CloudBase」 。目前已支持用户名绑定、解绑、发文字、发图片、追加、合并、删除、替换文字，还有显示哔哔列表、哔哔搜索！
 
 /l - 显示最近哔哔
+/s 关键词 - 搜索相关哔哔
 /a 文字 - 追加文字到第1条
 /a数字 文字 - 追加文字到第几条，如 /a2 文字
 /c - 合并前2条
@@ -211,6 +213,7 @@
 <p>原是发到 LeanCloud 平台，现 2.0 是发到 <strong>「腾讯 CloudBase」</strong> 。目前已支持用户名绑定、解绑、发文字、<strong>发图片</strong>、追加、合并、删除、替换文字，还有显示<strong>哔哔列表</strong>、<strong>哔哔搜索</strong>！</p>
 <blockquote>
 <p><code>/l</code> - 显示最近哔哔</p>
+<p><code>/s 关键词</code> - 搜索相关哔哔</p>
 <p><code>/a 文字</code> - 追加文字到第1条</p>
 <p><code>/a数字 文字</code> - 追加文字到第几条，如 /a2 文字</p>
 <p><code>/c</code> - 合并前2条</p>
@@ -286,7 +289,7 @@
 &lt;/<span style="color:#f92672">style</span>&gt;
 </code></pre></div><p>具体页面参考 <a href="https://github.com/lmm214/immmmm/blob/master/themes/hello-friend/layouts/_default/bb.html">bb.html</a></p>
 <hr>
-<h3 id="手动部署获取环境id">手动部署：获取环境ID</h3>
+<h3 id="手动部署创建应用">手动部署：创建应用</h3>
 <p>1.<a href="https://curl.qcloud.com/KnnJtUom">注册云开发CloudBase</a></p>
 <p>2.进入<a href="https://console.cloud.tencent.com/tcb/">云开发控制台</a>，新建环境，请按需配置环境</p>
 <blockquote>
@@ -297,20 +300,18 @@
 </blockquote>
 <p>3.进入<a href="https://console.cloud.tencent.com/tcb/env/login">环境-登录授权</a>，启用“匿名登录”</p>
 <p>4.进入<a href="https://console.cloud.tencent.com/tcb/env/safety">环境-安全配置</a>，将网站域名添加到“WEB安全域名”</p>
-<p>5.复制 <code>环境Id</code> 备用</p>
-<h3 id="手动部署新建数据库">手动部署：新建数据库</h3>
+<p>5.进入<a href="https://console.cloud.tencent.com/tcb/db/">数据库</a>，新建数据库集合，命名 <code>talks</code>，权限设置为 “所有用户可读，仅管理员可写”。</p>
 <p><img loading='lazy' src="https://lmm.elizen.me/images/2020/12/talks.jpg" alt="talks"  /></p>
-<p>新建数据库集合，命名 <code>talks</code>，权限设置为 “所有用户可读，仅管理员可写”。</p>
-<h3 id="手动部署云函数部署修改代码中的-自定义apikey-和-环境id">手动部署：云函数部署（修改代码中的 「自定义apikey」 和 「环境ID」）</h3>
-<p>接着 <a href="https://console.cloud.tencent.com/tcb/scf/index">新建云函数</a> ，函数名称 <code>bber</code> （可自定义），进入 <code>函数代码</code> 编辑，复制 <a href="https://github.com/lmm214/bber/blob/main/bber/index.js">index.js</a> 代码丢入 <code>index.js</code>，然后确定。</p>
-<p>完成后，点击“文件 - 新建文件”，复制 <a href="https://github.com/lmm214/bber/blob/main/bber/package.json">package.json</a> 代码丢入 <code>package.json</code>，点击 <code>保存并安装依赖</code>。</p>
-<h3 id="手动部署开启-http-访问服务获取http访问地址">手动部署：开启 HTTP 访问服务,获取HTTP访问地址</h3>
+<h3 id="手动部署云函数部署">手动部署：云函数部署</h3>
+<p>1.接着 <a href="https://console.cloud.tencent.com/tcb/scf/index">新建云函数</a></p>
+<p>函数名称 <code>bber</code> （可自定义），进入 <code>函数代码</code> 编辑，复制 <a href="https://github.com/lmm214/bber/blob/main/bber/index.js">index.js</a> 代码丢入 <code>index.js</code>，然后确定。</p>
+<p>2.点击“文件 - 新建文件”，复制 <a href="https://github.com/lmm214/bber/blob/main/bber/package.json">package.json</a> 代码丢入 <code>package.json</code>，点击 <code>保存并安装依赖</code>。</p>
+<p>3.进入<a href="https://console.cloud.tencent.com/tcb/env/access">环境-HTTP访问服务</a>，新建，路径与云函数名匹配。</p>
 <p><img loading='lazy' src="https://lmm.elizen.me/images/2020/12/bb-tx-1.png" alt="bb-tx-1"  /></p>
-<p>环境 &ndash; HTTP访问服务 &ndash; 开启 &ndash; 新建，路径与云函数名匹配。</p>
-<p>现在可以点开看一下：</p>
+<p>现在点开看一下，提示 <code>key不匹配</code>，成功！</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">https://你后台显示的.ap-shanghai.app.tcloudbase.com/bber
-</code></pre></div><p>提示 <code>key不匹配</code>，成功！留存此链接！！！</p>
-<h3 id="扫码绑定">扫码，绑定</h3>
+</code></pre></div><p>！！！<strong>注意：第一时间修改云函数中 <code>bber</code> 这个预设的「自定义apikey」</strong>！！！</p>
+<h3 id="扫码绑定">扫码绑定</h3>
 <figure>
     <img src="https://lmm.elizen.me/images/2020/05/bbds.png"/><figcaption>「哔哔点啥」微信公众号 2.0</figcaption></figure>
 
@@ -320,13 +321,55 @@
 </code></pre></div><h3 id="旧数据转化">旧数据转化</h3>
 <p>把 LC 上的评论导出并进行格式转化，形成如下格式，<code>from</code> 字段是我自己后来加的。</p>
 <pre><code>{&quot;_id&quot;:&quot;4ec5c2495fe84db1000046a47026ed51&quot;,&quot;from&quot;:&quot;微信公众号&quot;,&quot;content&quot;:&quot;恶果之地得到各“金卡”莫名就通关+1&quot;,&quot;date&quot;:{&quot;$date&quot;:&quot;2020-12-27T07:38:10.844Z&quot;}}
-</code></pre><h3 id="附赠-alfred-workflow">附赠 Alfred Workflow</h3>
+</code></pre><h3 id="附赠1-alfred-workflow">附赠1: Alfred Workflow</h3>
 <p><a href="https://github.com/lmm214/diybug/raw/main/%E6%B5%AE%E5%93%94%E4%BA%BA%E7%94%9F2.0.alfredworkflow">浮哔人生.alfredworkflow</a></p>
 <p><img loading='lazy' src="https://lmm.elizen.me/images/2020/12/fbrs.png" alt="fbrs.png"  /></p>
 <p>输入好对应的 HTTP访问地址、KEY ，输入 <code>b /d</code> 就能删除最新一条哔哔</p>
+<h3 id="附赠2-bber-weixin">附赠2: BBer-weixin</h3>
+<p>点击以下按钮将 BBer-weixin 微信公众号后端，一键部署到云开发</p>
+<p><a rel="link" href="https://console.cloud.tencent.com/tcb/env/index?action=CreateAndDeployCloudBaseProject&amp;appUrl=https%3A%2F%2Fgithub.com%2Flmm214%2Fbber-weixin&amp;branch=main"><img class="avatar" loading="lazy" src="https://main.qcloudimg.com/raw/67f5a389f1ac6f3b4d04c7256438e44f.svg" alt=""></a></p>
+<p>对接的微信公众号简要流程：</p>
+<p>1.点击 <a href="https://console.cloud.tencent.com/tcb/scf/index">bber-weixin</a> 云函数，右上角**【编辑】**，开启**【固定IP】**，留存**公网固定IP**。
+<photos><img loading='lazy' src="https://lmm.elizen.me/images/2020/12/bbwx-1.png" alt="bbwx-1"  /><img loading='lazy' src="https://lmm.elizen.me/images/2020/12/bbwx-3.png" alt="bbwx-3"  /><img loading='lazy' src="https://lmm.elizen.me/images/2020/12/bbwx-2.png" alt="bbwx-2"  /></photos></p>
+<p>2.进入<a href="https://console.cloud.tencent.com/tcb/env/access">环境-HTTP访问服务</a>，获取<code>触发路径链接</code>并留存，如以下格式：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">https://bb-f5c0f-222222.ap-shanghai.app.tcloudbase.com/bber
+</code></pre></div><p>3.打开 <a href="https://mp.weixin.qq.com/">微信公众平台</a>，进入开发-基本配置，获取<code>AppID</code>和<code>AppSecret</code>留存，修改<code>IP白名单</code>为上一步的公网固定IP。继续服务器配置：</p>
+<p><img loading='lazy' src="https://lmm.elizen.me/images/2020/12/bbwx-4.png" alt="bbwx-4"  /></p>
+<p>一个<code>URL</code>，即第2步留存的触发链接；</p>
+<p>一个<code>Token</code>，预设为 <code>weixin</code></p>
+<p><strong>!!!先不点，不点，不点，不点提交！！！</strong></p>
+<p>4.回 <a href="https://console.cloud.tencent.com/tcb/scf/index">bber-weixin</a> 云函数，填入<code>微信公众号appid</code>、<code>微信公众号appsecret</code> 保存。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">token</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;weixin&#39;</span> <span style="color:#75715e">// 微信公众号的服务器验证用的令牌 token
+</span><span style="color:#75715e">//填入自己的微信公众号appid和appsecret
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">wxappid</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;微信公众号appid&#39;</span>,
+    <span style="color:#a6e22e">wxappsecret</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;微信公众号appsecret&#39;</span>,
+</code></pre></div><p>5.回 <a href="https://mp.weixin.qq.com/">微信公众平台</a>，提交，验证成功！</p>
+<p>6.回 <a href="https://console.cloud.tencent.com/tcb/scf/index">bber-weixin</a> 云函数，注释第44行代码，保存。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">tmpStr</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">signature</span>){
+        <span style="color:#75715e">//请求来源鉴权
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//成功后注释下行代码
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//return event.queryStringParameters.echostr //成功后注释本行代码
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//成功后注释上行代码
+</span></code></pre></div><p>7.手动配置或更新代码： <a href="https://github.com/lmm214/bber-weixin/tree/main/bber-weixin">https://github.com/lmm214/bber-weixin/tree/main/bber-weixin</a></p>
       
     </div>
   
+    
+      <div class="tocify">目录：
+
+
+
+
+<ul class="toc-h3"><li><a href="/bb-by-wechat-pro/#%e6%97%a5%e5%b8%b8%e4%bd%bf%e7%94%a8%e6%88%aa%e5%9b%be">日常使用截图</a></li>
+            <li><a href="/bb-by-wechat-pro/#%e4%b8%80%e9%94%ae%e9%83%a8%e7%bd%b2%e5%8f%8a%e7%bb%91%e5%ae%9a">一键部署及绑定</a></li>
+            <li><a href="/bb-by-wechat-pro/#%e5%89%8d%e7%ab%af%e9%83%a8%e7%bd%b2">前端部署</a></li>
+            <li><a href="/bb-by-wechat-pro/#%e6%89%8b%e5%8a%a8%e9%83%a8%e7%bd%b2%e5%88%9b%e5%bb%ba%e5%ba%94%e7%94%a8">手动部署：创建应用</a></li>
+            <li><a href="/bb-by-wechat-pro/#%e6%89%8b%e5%8a%a8%e9%83%a8%e7%bd%b2%e4%ba%91%e5%87%bd%e6%95%b0%e9%83%a8%e7%bd%b2">手动部署：云函数部署</a></li>
+            <li><a href="/bb-by-wechat-pro/#%e6%89%ab%e7%a0%81%e7%bb%91%e5%ae%9a">扫码绑定</a></li>
+            <li><a href="/bb-by-wechat-pro/#%e6%97%a7%e6%95%b0%e6%8d%ae%e8%bd%ac%e5%8c%96">旧数据转化</a></li>
+            <li><a href="/bb-by-wechat-pro/#%e9%99%84%e8%b5%a01-alfred-workflow">附赠1: Alfred Workflow</a></li>
+            <li><a href="/bb-by-wechat-pro/#%e9%99%84%e8%b5%a02-bber-weixin">附赠2: BBer-weixin</a></li>
+            </div>
     
 
     
@@ -775,7 +818,7 @@
 <footer class="footer">
   <div class="footer__inner">
     <div class="copyright">
-      <span>共 174 篇文章</span><span> 83040 字</span>
+      <span>共 174 篇文章</span><span> 83491 字</span>
     </div>
     
       <div class="copyright">

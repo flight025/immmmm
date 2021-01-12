@@ -43,6 +43,7 @@
 &lt;p&gt;原是发到 LeanCloud 平台，现 2.0 是发到 &lt;strong&gt;「腾讯 CloudBase」&lt;/strong&gt; 。目前已支持用户名绑定、解绑、发文字、&lt;strong&gt;发图片&lt;/strong&gt;、追加、合并、删除、替换文字，还有显示&lt;strong&gt;哔哔列表&lt;/strong&gt;、&lt;strong&gt;哔哔搜索&lt;/strong&gt;！&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;code&gt;/l&lt;/code&gt; - 显示最近哔哔&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;/s 关键词&lt;/code&gt; - 搜索相关哔哔&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;/a 文字&lt;/code&gt; - 追加文字到第1条&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;/a数字 文字&lt;/code&gt; - 追加文字到第几条，如 /a2 文字&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;/c&lt;/code&gt; - 合并前2条&lt;/p&gt;

@@ -7,7 +7,7 @@
             <link href="https://immmmm.com/atom.xml" rel="self" type="application/rss+xml" title="atom" />
             <link href="https://immmmm.com/" rel="alternate" type="text/html" title="HTML" />
             <link href="https://immmmm.com/index.json" rel="alternate" type="application/json" title="JSON" />
-    <updated>2021-01-12T13:03:52+00:00</updated>
+    <updated>2021-01-12T13:49:40+00:00</updated>
     
     
     
@@ -171,7 +171,7 @@
 </span><span style="color:#75715e"></span>      <span style="color:#75715e">//region: &#34;ap-guangzhou&#34;
 </span><span style="color:#75715e"></span>  })
 &lt;/<span style="color:#f92672">script</span>&gt;
-&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/gh/lmm214/bber@main/bber.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/gh/lmm214/bber@0.0.1/bber.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">style</span>&gt;
   .<span style="color:#a6e22e">timeline</span> <span style="color:#f92672">ul</span> {<span style="color:#66d9ef">margin</span>:<span style="color:#ae81ff">0</span>;}
   .<span style="color:#a6e22e">timeline</span> <span style="color:#f92672">ul</span> <span style="color:#f92672">li</span> {<span style="color:#66d9ef">background</span>:<span style="color:#ae81ff">#3b3d42</span>;<span style="color:#66d9ef">list-style-type</span>:<span style="color:#66d9ef">none</span>;<span style="color:#66d9ef">position</span>:<span style="color:#66d9ef">relative</span>;<span style="color:#66d9ef">width</span>:<span style="color:#ae81ff">3</span><span style="color:#66d9ef">px</span>;<span style="color:#66d9ef">margin-left</span>:<span style="color:#ae81ff">2</span><span style="color:#66d9ef">em</span>;<span style="color:#66d9ef">padding</span>:<span style="color:#ae81ff">0.8</span><span style="color:#66d9ef">em</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">2</span><span style="color:#66d9ef">em</span>;}
@@ -212,8 +212,8 @@
 <p><img loading='lazy' src="https://lmm.elizen.me/images/2020/12/talks.jpg" alt="talks"  /></p>
 <p>新建数据库集合，命名 <code>talks</code>，权限设置为 “所有用户可读，仅管理员可写”。</p>
 <h3 id="手动部署云函数部署修改代码中的-自定义apikey-和-环境id">手动部署：云函数部署（修改代码中的 「自定义apikey」 和 「环境ID」）</h3>
-<p>接着 <a href="https://console.cloud.tencent.com/tcb/scf/index">新建云函数</a> ，函数名称 <code>bber</code> （可自定义），进入 <code>函数代码</code> 编辑，复制 <a href="https://github.com/lmm214/bber/blob/main/src/function/bber/index.js">index.js</a> 代码丢入 <code>index.js</code>，然后确定。</p>
-<p>完成后，点击“文件 - 新建文件”，复制 <a href="https://github.com/lmm214/bber/blob/main/src/function/bber/package.json">package.json</a> 代码丢入 <code>package.json</code>，点击 <code>保存并安装依赖</code>。</p>
+<p>接着 <a href="https://console.cloud.tencent.com/tcb/scf/index">新建云函数</a> ，函数名称 <code>bber</code> （可自定义），进入 <code>函数代码</code> 编辑，复制 <a href="https://github.com/lmm214/bber/blob/main/bber/index.js">index.js</a> 代码丢入 <code>index.js</code>，然后确定。</p>
+<p>完成后，点击“文件 - 新建文件”，复制 <a href="https://github.com/lmm214/bber/blob/main/bber/package.json">package.json</a> 代码丢入 <code>package.json</code>，点击 <code>保存并安装依赖</code>。</p>
 <h3 id="手动部署开启-http-访问服务获取http访问地址">手动部署：开启 HTTP 访问服务,获取HTTP访问地址</h3>
 <p><img loading='lazy' src="https://lmm.elizen.me/images/2020/12/bb-tx-1.png" alt="bb-tx-1"  /></p>
 <p>环境 &ndash; HTTP访问服务 &ndash; 开启 &ndash; 新建，路径与云函数名匹配。</p>

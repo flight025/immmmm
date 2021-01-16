@@ -7,12 +7,138 @@
             <link href="https://immmmm.com/atom.xml" rel="self" type="application/rss+xml" title="atom" />
             <link href="https://immmmm.com/" rel="alternate" type="text/html" title="HTML" />
             <link href="https://immmmm.com/index.json" rel="alternate" type="application/json" title="JSON" />
-    <updated>2021-01-16T13:35:03+00:00</updated>
+    <updated>2021-01-16T15:07:50+00:00</updated>
     
     
     
     
         <id>https://immmmm.com/atom.xml</id>
+    
+        
+        <entry>
+            <title type="html"><![CDATA[熟悉的味道，不一样配方]]></title>
+            <link href="https://immmmm.com/bb-talks-json/" rel="alternate" type="text/html" />
+            
+                <id>https://immmmm.com/bb-talks-json/</id>
+            
+            
+            <published>2021-01-16T22:26:12+08:00</published>
+            <updated>2021-01-16T22:26:12+08:00</updated>
+            
+            
+            <content type="html"><![CDATA[<p>⬆ ⬆ ⬆ 效果见首页 ⬆ ⬆ ⬆</p>
+<p>多么熟悉啊，遥想当年也算是折腾 WP 必备项，调取啁啾、饭否、TX说说 <del>没微博什么事</del> 的最新一条消息在博客头部显示。</p>
+<p>这不，腾讯 Cloudbase 也折腾快个把月，继续薅！</p>
+
+
+
+
+	
+		
+			
+			
+		
+	
+
+
+<div class="post-preview">
+  <div class="post-preview--meta" style="width:100%;">
+    <div class="post-preview--middle">
+      <h4 class="post-preview--title">
+        <a target="_blank" href="https://immmmm.com/bb-by-wechat-pro/">「哔哔点啥」微信公众号 2.0</a>
+      </h4>
+      <time class="post-preview--date">2021-01-06</time>
+      
+      <small>#折腾&nbsp;</small>
+      
+      <section style="max-height:96px;overflow:hidden;" class="post-preview--excerpt">
+         「哔哔点啥」微信公众号 2.0 原是发到 LeanCloud 平台，现 2.0 是发到 「腾讯 CloudBase」 。目前已支持用户名绑定、解绑、发文字、发图片、追加、合并、删除、替换文字，还有显示哔哔列表、哔哔搜索！
+ /l - 显示最近哔哔
+/s 关键词 - 搜索相关哔哔
+/a 文字 - 追加文字到第1条
+/a数字 文字 - 追加文字到第几条，如 /a2 文字
+/c - 合并前2条
+/c数字 - 合并前几条，如 /c3
+/d - 删除第1条
+/d数字 - 删除第几条，如 /d2
+/e 文字- 编辑替换第1条
+/e数字 文字 - 编辑替换第几条，如 /e2 文字
+/f数字 - 批量删除前几条，如 /f2
+/nobber - 解除绑定
+/bber KEY,HTTP访问地址 - 添加绑定
+ 对，绑定只需要2个信息，一个自定义的 KEY 和 云函数的http访问地址
+
+      </section>
+    </div>
+  </div>
+  
+    <img rel="link" loading="lazy" class="post-preview--image avatar" src="https://lmm.elizen.me/images/2020/12/bber-11.png">
+  
+</div>
+
+<p>既然云函数里用的是 NodeJS 大法，TCB又有足足5G的 <code>云存储</code> ，还自带 HTTPS 的 CDN ！想到，索性把<strong>哔哔</strong>转存一份为 <code>json</code> 呗！有了json文件前端一句 <code>$.getjson</code> 动态加载，太惬意！完全把那庞大地 tcb-js 抛之脑后！</p>
+<h3 id="新建转存-json-云函数">新建转存 JSON 云函数</h3>
+<p>首先新建个云函数 <code>bber-talk</code>，打开 <a href="https://github.com/lmm214/bber/blob/main/bber-talk/index.js">index.js</a> 代码复制进去保存，新建并打开 <a href="https://github.com/lmm214/bber/blob/main/bber-talk/package.json">package.json</a> 代码复制进去保存并安装依赖。</p>
+<h3 id="原云函数添加异步代码">原云函数添加异步代码</h3>
+<p>在之前 <a href="https://github.com/lmm214/bber/blob/main/bber/index.js">bber</a> 的 <code>index.js</code> 内添加以上代码，实现异步转存 Json 文件。</p>
+<p><img loading='lazy' src="https://lmm.elizen.me/images/2020/12/bbtalk-1.png" alt="bbtalk-1"  /></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">//异步转存json
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">try</span> {
+    <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">callFunction</span>({<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;bber-talk&#39;</span>}, { <span style="color:#a6e22e">timeout</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">300</span> })
+} <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">e</span>) {
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;开始异步转存json&#39;</span>)
+}
+</code></pre></div><h3 id="云存储获取链接及缓存设置">云存储获取链接及缓存设置</h3>
+<p>进<strong>云存储&ndash;json&ndash;bber.json</strong>，详情&ndash;下载地址，得到下面格式地址：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">https://6262-bb-f5c0f-1252354806.tcb.qcloud.la/json/bber.json
+</code></pre></div><p>点击上面的 <code>缓存设置</code>，如下设置：</p>
+<p><img loading='lazy' src="https://lmm.elizen.me/images/2020/12/bbtalk-2.png" alt="bbtalk-2"  /></p>
+<h3 id="前端调用代码">前端调用代码</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bber-talk&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+</code></pre></div><p>下面 <code>jsonUrl</code> 链接改为自己云存储的</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">//依赖 jQuery 库，其中 jsonUrl 改为自己的
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">$</span>(document).<span style="color:#a6e22e">ready</span>(<span style="color:#66d9ef">function</span>(){
+  <span style="color:#66d9ef">if</span> ( <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;#bber-talk&#34;</span>).<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> ) {
+    <span style="color:#a6e22e">jsonUrl</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://6262-bb-f5c0f-1252354806.tcb.qcloud.la/json/bber.json&#34;</span>
+    <span style="color:#a6e22e">$</span>.<span style="color:#a6e22e">getJSON</span>(<span style="color:#a6e22e">jsonUrl</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;?t=&#34;</span><span style="color:#f92672">+</span>Date.<span style="color:#a6e22e">parse</span>( <span style="color:#66d9ef">new</span> Date()),<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">res</span>){
+      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">bberHtml</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
+      <span style="color:#a6e22e">$</span>.<span style="color:#a6e22e">each</span>(<span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">data</span>, <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">item</span>){
+        <span style="color:#a6e22e">d</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date(<span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">date</span>)
+        <span style="color:#a6e22e">date</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">getFullYear</span>()<span style="color:#f92672">+</span><span style="color:#e6db74">&#39;/&#39;</span><span style="color:#f92672">+</span>(<span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">getMonth</span>()<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">+</span><span style="color:#e6db74">&#39;/&#39;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">getDate</span>() <span style="color:#f92672">+</span><span style="color:#e6db74">&#39; &#39;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">getHours</span>()<span style="color:#f92672">+</span><span style="color:#e6db74">&#39;:&#39;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">getMinutes</span>()<span style="color:#f92672">+</span><span style="color:#e6db74">&#39;:&#39;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">getSeconds</span>()
+        <span style="color:#a6e22e">dataTime</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;span class=&#34;datatime&#34;&gt;&#39;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">date</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#39;&lt;/span&gt;&#39;</span>
+        <span style="color:#a6e22e">bberHtml</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#39;&lt;li class=&#34;item item-&#39;</span><span style="color:#f92672">+</span>(<span style="color:#a6e22e">i</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">+</span><span style="color:#e6db74">&#39;&#34;&gt;&#39;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">dataTime</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#39;： &lt;a href=&#34;https://immmmm.com/bb/&#34;&gt;&#39;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">content</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#39;&lt;/a&gt;&lt;/li&gt;&#39;</span>
+      });
+      <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;#bber-talk&#39;</span>).<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">&#39;&lt;span class=&#34;index-talk-icon&#34;&gt;&lt;svg viewBox=&#34;0 0 1024 1024&#34; width=&#34;21&#34; height=&#34;21&#34;&gt;&lt;path d=&#34;M184.32 891.667692c-12.603077 0-25.206154-2.363077-37.809231-7.876923-37.021538-14.966154-59.864615-49.624615-59.864615-89.009231v-275.692307c0-212.676923 173.292308-385.969231 385.969231-385.969231h78.76923c212.676923 0 385.969231 173.292308 385.969231 385.969231 0 169.353846-137.846154 307.2-307.2 307.2H289.083077l-37.021539 37.021538c-18.904615 18.116923-43.323077 28.356923-67.741538 28.356923zM472.615385 195.347692c-178.018462 0-322.953846 144.935385-322.953847 322.953846v275.692308c0 21.267692 15.753846 29.144615 20.48 31.507692 4.726154 2.363077 22.055385 7.876923 37.021539-7.08923l46.473846-46.473846c6.301538-6.301538 14.178462-9.452308 22.055385-9.452308h354.461538c134.695385 0 244.184615-109.489231 244.184616-244.184616 0-178.018462-144.935385-322.953846-322.953847-322.953846H472.615385z&#34;&gt;&lt;/path&gt;&lt;path d=&#34;M321.378462 512m-59.076924 0a59.076923 59.076923 0 1 0 118.153847 0 59.076923 59.076923 0 1 0-118.153847 0Z&#34;&gt;&lt;/path&gt;&lt;path d=&#34;M518.301538 512m-59.076923 0a59.076923 59.076923 0 1 0 118.153847 0 59.076923 59.076923 0 1 0-118.153847 0Z&#34;&gt;&lt;/path&gt;&lt;path d=&#34;M715.224615 512m-59.076923 0a59.076923 59.076923 0 1 0 118.153846 0 59.076923 59.076923 0 1 0-118.153846 0Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/span&gt;&lt;ul class=&#34;talk-list&#34;&gt;&#39;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">bberHtml</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#39;&lt;/ul&gt;&#39;</span>)
+      <span style="color:#a6e22e">Lately</span>({ <span style="color:#e6db74">&#39;target&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;#bber-talk .datatime&#39;</span> });
+    });
+    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Roll</span> (){
+      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">list_li</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;.talk-list li&#39;</span>),<span style="color:#a6e22e">cur_li</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">list_li</span>.<span style="color:#a6e22e">first</span>(),<span style="color:#a6e22e">last_li</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">list_li</span>.<span style="color:#a6e22e">last</span>();
+      <span style="color:#a6e22e">last_li</span>.<span style="color:#a6e22e">after</span>(<span style="color:#a6e22e">cur_li</span>);
+    };
+    <span style="color:#a6e22e">setInterval</span>(<span style="color:#a6e22e">Roll</span>,<span style="color:#ae81ff">3000</span>);
+  }
+});
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">#bber-talk{<span style="color:#66d9ef">display</span>:<span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">flex</span>;<span style="color:#66d9ef">display</span>:<span style="color:#66d9ef">flex</span>;<span style="color:#66d9ef">width</span>:<span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;<span style="color:#66d9ef">line-height</span>:<span style="color:#ae81ff">2</span><span style="color:#66d9ef">em</span>;<span style="color:#66d9ef">height</span>:<span style="color:#ae81ff">45</span><span style="color:#66d9ef">px</span>;<span style="color:#66d9ef">max-width</span>:<span style="color:#ae81ff">760</span><span style="color:#66d9ef">px</span>;<span style="color:#66d9ef">text-align</span>:<span style="color:#66d9ef">left</span>;<span style="color:#66d9ef">padding</span>:<span style="color:#ae81ff">5</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">15</span><span style="color:#66d9ef">px</span>;<span style="color:#66d9ef">margin-bottom</span>:<span style="color:#ae81ff">3</span><span style="color:#66d9ef">em</span>;<span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">relative</span>;<span style="color:#66d9ef">background-color</span>: <span style="color:#a6e22e">var</span>(<span style="color:#f92672">--</span>light<span style="color:#f92672">-</span>header);<span style="color:#66d9ef">border-radius</span>:<span style="color:#ae81ff">8</span><span style="color:#66d9ef">px</span>;<span style="color:#66d9ef">font-size</span>:<span style="color:#ae81ff">15</span><span style="color:#66d9ef">px</span>;}
+#bber-talk <span style="color:#f92672">svg</span>{fill: <span style="color:#66d9ef">currentColor</span>;<span style="color:#66d9ef">vertical-align</span>: <span style="color:#66d9ef">middle</span>;<span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">inline</span>;<span style="color:#66d9ef">margin-right</span>:<span style="color:#ae81ff">5</span><span style="color:#66d9ef">px</span>;}
+.<span style="color:#a6e22e">talk-list</span>{<span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0</span>;<span style="color:#66d9ef">max-height</span>: <span style="color:#ae81ff">35</span><span style="color:#66d9ef">px</span>;<span style="color:#66d9ef">overflow</span>: <span style="color:#66d9ef">hidden</span>;}
+.<span style="color:#a6e22e">talk-list</span> <span style="color:#f92672">li</span> {<span style="color:#66d9ef">list-style</span>: <span style="color:#66d9ef">none</span>;<span style="color:#66d9ef">margin-bottom</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;<span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;<span style="color:#66d9ef">white-space</span>: <span style="color:#66d9ef">nowrap</span>;<span style="color:#66d9ef">text-overflow</span>: <span style="color:#66d9ef">ellipsis</span>;<span style="color:#66d9ef">overflow</span>: <span style="color:#66d9ef">hidden</span>;}
+</code></pre></div><p>END.</p>]]></content>
+            
+                 
+                    
+                 
+                    
+                         
+                        
+                            
+                             
+                                <category scheme="https://immmmm.com/tags/%E6%8A%98%E8%85%BE" term="%E6%8A%98%E8%85%BE" label="折腾" />
+                            
+                        
+                    
+                
+            
+        </entry>
     
         
         <entry>
@@ -409,50 +535,6 @@
 <p><img loading='lazy' src="https://lmm.elizen.me/images/2020/12/bbpro-5.jpeg" alt="bbpro-5"  /></p>
 <p>具体其他平台发布方式，改日改日再琢磨～</p>
 ]]></content>
-            
-                 
-                    
-                 
-                    
-                         
-                        
-                            
-                             
-                                <category scheme="https://immmmm.com/tags/%E6%8A%98%E8%85%BE" term="%E6%8A%98%E8%85%BE" label="折腾" />
-                            
-                        
-                    
-                
-            
-        </entry>
-    
-        
-        <entry>
-            <title type="html"><![CDATA[微信小程序评论开发踩坑记]]></title>
-            <link href="https://immmmm.com/bugs-wx-minapp/" rel="alternate" type="text/html" />
-            
-                <id>https://immmmm.com/bugs-wx-minapp/</id>
-            
-            
-            <published>2020-12-19T23:48:16+08:00</published>
-            <updated>2020-12-19T23:48:16+08:00</updated>
-            
-            
-            <content type="html"><![CDATA[<p>容我吐会儿！！！🤮</p>
-<p>冲动是魔鬼，就因看了 <a href="https://www.ifanr.com/minapp/916787">10 分钟教你实现一个朋友圈小程序</a> ，SoGa！换下臃肿的 <a href="https://github.com/yicm/NewWxComment">NewWxComment</a> ，直接原生知晓云纯收工评论开码！</p>
-<p>刚干完了：评论、相对时间、评论分页、下拉加载、排序切换、点赞、回复、前端删除、订阅消息！除了提交新评论会重新拉取数据，其他前后端分别处理。最舒心的是评论回复的消息通知！</p>
-<h3 id="相对时间">相对时间</h3>
-<p>时间戳转 Date 及格式化，吐在不支持 <code>new Date()</code> ，在 wxml 内调用 wxs 搞定！</p>
-<h3 id="评论分页下拉加载排序切换">评论分页、下拉加载、排序切换</h3>
-<p>为了前端直接渲染脑子搞s，吐在不支持 push ，利用各种数组拼组 setData 搞定！</p>
-<h3 id="点赞">点赞</h3>
-<p>感谢 <a href="https://blog.csdn.net/qq_41049816/article/details/84792206">微信小程序列表点赞功能</a> 省了不少力，但依然吐在不支持 push，还没实现“已点赞”标示，只能在点击时判断！</p>
-<h3 id="回复">回复</h3>
-<p>依然吐在不支持 push！！！利用 for 、map 强插搞定！</p>
-<h3 id="前端删除">前端删除</h3>
-<p>最省心的功能，判断是否创建者或管理者，显示「删除」按钮。这方面知晓云服务到位！</p>
-<h3 id="订阅消息">订阅消息</h3>
-<p>url 中文转码导致 page 无法正常跳转，keyword 特定参数及限制导致测试了一下午，加上 <code>decodeuricomponent()</code> 顺利回血！</p>]]></content>
             
                  
                     

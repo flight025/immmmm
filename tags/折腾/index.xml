@@ -6,10 +6,69 @@
     <description>Recent content in 折腾 on 木木木木木</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 09 Jan 2021 22:26:22 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 16 Jan 2021 22:26:12 +0800</lastBuildDate>
     
 	<atom:link href="https://immmmm.com/tags/%E6%8A%98%E8%85%BE/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>熟悉的味道，不一样配方</title>
+      <link>https://immmmm.com/bb-talks-json/</link>
+      <pubDate>Sat, 16 Jan 2021 22:26:12 +0800</pubDate>
+      
+      <guid>https://immmmm.com/bb-talks-json/</guid>
+      <description>&lt;p&gt;⬆ ⬆ ⬆ 效果见首页 ⬆ ⬆ ⬆&lt;/p&gt;
+&lt;p&gt;多么熟悉啊，遥想当年也算是折腾 WP 必备项，调取啁啾、饭否、TX说说 &lt;del&gt;没微博什么事&lt;/del&gt; 的最新一条消息在博客头部显示。&lt;/p&gt;
+&lt;p&gt;这不，腾讯 Cloudbase 也折腾快个把月，继续薅！&lt;/p&gt;
+
+
+
+
+	
+		
+			
+			
+		
+	
+
+
+&lt;div class=&#34;post-preview&#34;&gt;
+  &lt;div class=&#34;post-preview--meta&#34; style=&#34;width:100%;&#34;&gt;
+    &lt;div class=&#34;post-preview--middle&#34;&gt;
+      &lt;h4 class=&#34;post-preview--title&#34;&gt;
+        &lt;a target=&#34;_blank&#34; href=&#34;https://immmmm.com/bb-by-wechat-pro/&#34;&gt;「哔哔点啥」微信公众号 2.0&lt;/a&gt;
+      &lt;/h4&gt;
+      &lt;time class=&#34;post-preview--date&#34;&gt;2021-01-06&lt;/time&gt;
+      
+      &lt;small&gt;#折腾&amp;nbsp;&lt;/small&gt;
+      
+      &lt;section style=&#34;max-height:96px;overflow:hidden;&#34; class=&#34;post-preview--excerpt&#34;&gt;
+         「哔哔点啥」微信公众号 2.0 原是发到 LeanCloud 平台，现 2.0 是发到 「腾讯 CloudBase」 。目前已支持用户名绑定、解绑、发文字、发图片、追加、合并、删除、替换文字，还有显示哔哔列表、哔哔搜索！
+ /l - 显示最近哔哔
+/s 关键词 - 搜索相关哔哔
+/a 文字 - 追加文字到第1条
+/a数字 文字 - 追加文字到第几条，如 /a2 文字
+/c - 合并前2条
+/c数字 - 合并前几条，如 /c3
+/d - 删除第1条
+/d数字 - 删除第几条，如 /d2
+/e 文字- 编辑替换第1条
+/e数字 文字 - 编辑替换第几条，如 /e2 文字
+/f数字 - 批量删除前几条，如 /f2
+/nobber - 解除绑定
+/bber KEY,HTTP访问地址 - 添加绑定
+ 对，绑定只需要2个信息，一个自定义的 KEY 和 云函数的http访问地址
+
+      &lt;/section&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+    &lt;img rel=&#34;link&#34; loading=&#34;lazy&#34; class=&#34;post-preview--image avatar&#34; src=&#34;https://lmm.elizen.me/images/2020/12/bber-11.png&#34;&gt;
+  
+&lt;/div&gt;
+
+&lt;p&gt;既然云函数里用的是 NodeJS 大法，TCB又有足足5G的 &lt;code&gt;云存储&lt;/code&gt; ，还自带 HTTPS 的 CDN ！想到，索性把&lt;strong&gt;哔哔&lt;/strong&gt;转存一份为 &lt;code&gt;json&lt;/code&gt; 呗！有了json文件前端一句 &lt;code&gt;$.getjson&lt;/code&gt; 动态加载，太惬意！完全把那庞大地 tcb-js 抛之脑后！&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>腾讯 CloudBase ，开启一键部署</title>
@@ -79,16 +138,6 @@
 &lt;p&gt;刚干完了：评论、相对时间、评论分页、下拉加载、排序切换、点赞、回复、前端删除、订阅消息！除了提交新评论会重新拉取数据，其他前后端分别处理。最舒心的是评论回复的消息通知！&lt;/p&gt;
 &lt;h3 id=&#34;相对时间&#34;&gt;相对时间&lt;/h3&gt;
 &lt;p&gt;时间戳转 Date 及格式化，吐在不支持 &lt;code&gt;new Date()&lt;/code&gt; ，在 wxml 内调用 wxs 搞定！&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Flomo | 浮墨笔记</title>
-      <link>https://immmmm.com/flomoapp/</link>
-      <pubDate>Sun, 13 Dec 2020 17:17:37 +0800</pubDate>
-      
-      <guid>https://immmmm.com/flomoapp/</guid>
-      <description>&lt;p&gt;上专属邀请链接：&lt;a href=&#34;https://flomoapp.com/register2/?Njk1NA&#34;&gt;https://flomoapp.com/register2/?Njk1NA&lt;/a&gt; (能互相得到几天Pro会员)&lt;/p&gt;
-&lt;p&gt;用了一周 &lt;strong&gt;Flomo&lt;/strong&gt; ，简单来说是一个「哔言哔语」的 &lt;strong&gt;正经版&lt;/strong&gt; ，其特有的回顾功能有点新意，基于某个 TAG 或 批注某条信息，无压力积累碎片化的想法，说不准碎着碎着就成了深度思考！&lt;/p&gt;</description>
     </item>
     
   </channel>

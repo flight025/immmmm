@@ -16,7 +16,7 @@
 {{ if .Params.path }} {{$Path := .Params.path}} {{- range (readDir (printf &amp;quot;%s%s&amp;quot; &amp;quot;./static/images/&amp;quot; $Path )) -}}&amp;lt;img loading=&#39;lazy&#39; src=&amp;quot;{{(printf &amp;quot;/images/%s/%s&amp;quot; $Path .Name ) | absURL}}&amp;quot; /&amp;gt;{{- end -}} {{ end }} 当文章中写了 path: 2004gd 表示 Hugo 遍历根目录 /static/images/2004gd 内的图片并显示。
 "/>
 <meta name="keywords" content=""/>
-<meta name="referrer" content="never" />
+<meta name="referrer" content="same-origin">
 <link rel="canonical" href="https://immmmm.com/hugo-readdir-photos-single/" />
 <link rel="stylesheet" href="/style.css?t=20210118">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:500&display=swap" media="print" onload="this.media='all'">

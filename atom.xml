@@ -7,12 +7,43 @@
             <link href="https://immmmm.com/atom.xml" rel="self" type="application/rss+xml" title="atom" />
             <link href="https://immmmm.com/" rel="alternate" type="text/html" title="HTML" />
             <link href="https://immmmm.com/index.json" rel="alternate" type="application/json" title="JSON" />
-    <updated>2021-02-06T07:58:10+00:00</updated>
+    <updated>2021-02-12T01:52:03+00:00</updated>
     
     
     
     
         <id>https://immmmm.com/atom.xml</id>
+    
+        
+        <entry>
+            <title type="html"><![CDATA[牛气冲天，诸事大吉]]></title>
+            <link href="https://immmmm.com/happy-niu-year-2021/" rel="alternate" type="text/html" />
+            
+                <id>https://immmmm.com/happy-niu-year-2021/</id>
+            
+            
+            <published>2021-02-12T09:34:53+08:00</published>
+            <updated>2021-02-12T09:34:53+08:00</updated>
+            
+            
+            <content type="html"><![CDATA[<p>辛丑牛年，大年初一，阴雨绵绵，晒个烟火，祝小伙伴们和自己新春快乐！</p>
+<p><photos><a href="https://lmm.elizen.me/images/2021/02/hp21-1.JPG">hp21-1.JPG</a><a href="https://lmm.elizen.me/images/2021/02/hp21-2.JPG">hp21-2.JPG</a><a href="https://lmm.elizen.me/images/2021/02/hp21-3.JPG">hp21-3.JPG</a><a href="https://lmm.elizen.me/images/2021/02/hp21-4.JPG">hp21-4.JPG</a><a href="https://lmm.elizen.me/images/2021/02/hp21-5.JPG">hp21-5.JPG</a><a href="https://lmm.elizen.me/images/2021/02/hp21-6.JPG">hp21-6.JPG</a><a href="https://lmm.elizen.me/images/2021/02/hp21-7.JPG">hp21-7.JPG</a><a href="https://lmm.elizen.me/images/2021/02/hp21-8.JPG">hp21-8.JPG</a><a href="https://lmm.elizen.me/images/2021/02/hp21-9.JPG">hp21-9.JPG</a><a href="https://lmm.elizen.me/images/2021/02/hp21-10.JPG">hp21-10.JPG</a></photos></p>]]></content>
+            
+                 
+                    
+                 
+                    
+                         
+                        
+                            
+                             
+                                <category scheme="https://immmmm.com/tags/%E6%97%A5%E5%B8%B8" term="%E6%97%A5%E5%B8%B8" label="日常" />
+                            
+                        
+                    
+                
+            
+        </entry>
     
         
         <entry>
@@ -490,61 +521,6 @@
                             
                              
                                 <category scheme="https://immmmm.com/tags/%E6%97%A5%E5%B8%B8" term="%E6%97%A5%E5%B8%B8" label="日常" />
-                            
-                        
-                    
-                
-            
-        </entry>
-    
-        
-        <entry>
-            <title type="html"><![CDATA[哔哔 Pro]]></title>
-            <link href="https://immmmm.com/bb-pro/" rel="alternate" type="text/html" />
-            
-                <id>https://immmmm.com/bb-pro/</id>
-            
-            
-            <published>2020-12-28T23:39:12+08:00</published>
-            <updated>2020-12-28T23:39:12+08:00</updated>
-            
-            
-            <content type="html"><![CDATA[<h3 id="pro-n01">Pro N0.1</h3>
-<p>前端支持链接、图片显示。发哔哔的时候插入图片链接或网址链接，会自动识别显示。核心代码来自 <a href="https://www.heson10.com/">@黑石</a> :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">urlToLink</span>(<span style="color:#a6e22e">str</span>) {
-  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">re</span> <span style="color:#f92672">=</span><span style="color:#e6db74">/\bhttps?:\/\/(?!\S+(?:jpe?g|png|bmp|gif|webp|gif))\S+/g</span>;
-  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">re_forpic</span> <span style="color:#f92672">=</span><span style="color:#e6db74">/\bhttps?:\/\/.*?(\.gif|\.jpeg|\.png|\.jpg|\.bmp|\.webp)/g</span>;
-  <span style="color:#a6e22e">str</span> <span style="color:#f92672">=</span><span style="color:#a6e22e">str</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#a6e22e">re</span>,<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">website</span>) {
-    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&lt;a href=&#39;&#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">website</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;&#39; target=&#39;_blank&#39;&gt; &lt;i class=&#39;iconfont icon-lianjie-copy&#39;&gt;&lt;/i&gt;链接 &lt;/a&gt;&#34;</span>;
-  });
-  <span style="color:#a6e22e">str</span> <span style="color:#f92672">=</span><span style="color:#a6e22e">str</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#a6e22e">re_forpic</span>,<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">imgurl</span>) {
-    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&lt;img src=&#39;&#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">imgurl</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;&#39;  /&gt; &#34;</span>;
-  });
-  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">str</span>;
-}
-</code></pre></div><p>完整代码参考本主题 <a href="https://github.com/lmm214/immmmm/blob/master/themes/hello-friend/layouts/_default/bb.html">bb.html</a> ，主要加了上面的过滤正则 <code>urlToLink(item.content)</code> 。</p>
-<h3 id="pro-n02">Pro N0.2</h3>
-<p>接入 <a href="https://7bu.top/">去不图床</a> ，注册之后访问：</p>
-<p><code>https://7bu.top/api/token?email=你的邮箱&amp;password=你的密码</code> 记下 <code>token</code> 值。</p>
-<p><a href="https://7bu.top/index/api.html">图片上传API</a> 异常直接，post <code>https://7bu.top/api/upload</code> ，header 带上自己的 <code>token</code>，不带则匿名上传。用表单的请求参数 <code>image</code> 提交 <code>File</code>。</p>
-<p>相关教程：<a href="https://dusays.com/241/">去不图床PicGo上传插件的使用</a>、<a href="https://blog.svend.cc/upic/tutorials/custom/">uPic 图床配置教程 - 自定义</a></p>
-<h3 id="pro-n03">Pro N0.3</h3>
-<p>iOS 快捷指令上传图片后返回链接，到哔哔输入框。</p>
-<p><photos><img loading='lazy' src="https://lmm.elizen.me/images/2020/12/bbpro-1.jpeg" alt="bbpro-1"  /><img loading='lazy' src="https://lmm.elizen.me/images/2020/12/bbpro-2.jpeg" alt="bbpro-2"  /><img loading='lazy' src="https://lmm.elizen.me/images/2020/12/bbpro-3.png" alt="bbpro-3"  /><img loading='lazy' src="https://lmm.elizen.me/images/2020/12/bbpro-4.png" alt="bbpro-4"  /></photos></p>
-<p>甚至用“快捷指令调用其他指令”实现同步发哔哔和Flomo。</p>
-<p><img loading='lazy' src="https://lmm.elizen.me/images/2020/12/bbpro-5.jpeg" alt="bbpro-5"  /></p>
-<p>具体其他平台发布方式，改日改日再琢磨～</p>
-]]></content>
-            
-                 
-                    
-                 
-                    
-                         
-                        
-                            
-                             
-                                <category scheme="https://immmmm.com/tags/%E6%8A%98%E8%85%BE" term="%E6%8A%98%E8%85%BE" label="折腾" />
                             
                         
                     
